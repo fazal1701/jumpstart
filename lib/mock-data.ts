@@ -10,6 +10,9 @@ export interface User {
     avatar: string;
     headline?: string;
     verifiedSkills?: string[];
+    bio?: string;
+    location?: string;
+    badges?: string[];
 }
 
 export interface Company {
@@ -44,6 +47,28 @@ export interface PortfolioItem {
     verifiedBy: string; // Company Name
 }
 
+// --- NEW PHASE 2 MODELS ---
+
+export interface JobAnalysis {
+    id: string;
+    jobDescriptionSnippet: string;
+    extractedSkills: { name: string; importance: 'HIGH' | 'MEDIUM' | 'LOW' }[];
+    detectedLevel: SkillLevel;
+    estimatedSalaryRange: string;
+    culturalSignals: string[]; // e.g. "Fast-paced", "Remote-friendly"
+}
+
+export interface MatchResult {
+    candidateId: string;
+    jobAnalysisId: string;
+    matchScore: number; // 0-100
+    matchReasons: {
+        type: 'SKILL' | 'EXPERIENCE' | 'VIBE';
+        description: string;
+        isPositive: boolean;
+    }[];
+}
+
 // --- MOCK USERS (Candidates) ---
 export const MOCK_CANDIDATES: User[] = [
     {
@@ -52,7 +77,10 @@ export const MOCK_CANDIDATES: User[] = [
         role: "CANDIDATE",
         avatar: "https://i.pravatar.cc/150?u=a042581f4e29026024d",
         headline: "Frontend Engineer | React + Tailwind Master",
-        verifiedSkills: ["React", "TypeScript", "Tailwind CSS", "Framer Motion"]
+        verifiedSkills: ["React", "TypeScript", "Tailwind CSS", "Framer Motion"],
+        bio: "Focusing on pixel-perfect UI and smooth animations. 3 years experience building SaaS dashboards.",
+        location: "New York, USA",
+        badges: ["Top Performer", "React Expert"]
     },
     {
         id: "u2",
@@ -60,7 +88,10 @@ export const MOCK_CANDIDATES: User[] = [
         role: "CANDIDATE",
         avatar: "https://i.pravatar.cc/150?u=a042581f4e29026704d",
         headline: "Full Stack Developer | Node.js & Postgres",
-        verifiedSkills: ["Node.js", "PostgreSQL", "Redis", "Docker"]
+        verifiedSkills: ["Node.js", "PostgreSQL", "Redis", "Docker"],
+        bio: "Backend specialist who loves optimizing database queries and building scalable APIs.",
+        location: "San Francisco, USA",
+        badges: ["Backend Architect"]
     },
     {
         id: "u3",
@@ -68,7 +99,9 @@ export const MOCK_CANDIDATES: User[] = [
         role: "CANDIDATE",
         avatar: "https://i.pravatar.cc/150?u=a04258114e29026302d",
         headline: "UI/UX Designer | Design Systems",
-        verifiedSkills: ["Figma", "UI Design", "Prototyping"]
+        verifiedSkills: ["Figma", "UI Design", "Prototyping"],
+        bio: "Designing accessible and inclusive digital experiences. Expert in Figma variable modes.",
+        location: "Remote (UK)"
     },
     {
         id: "u4",
@@ -76,7 +109,9 @@ export const MOCK_CANDIDATES: User[] = [
         role: "CANDIDATE",
         avatar: "https://i.pravatar.cc/150?u=a04258114e29026708c",
         headline: "Data Scientist | Python & ML",
-        verifiedSkills: ["Python", "PyTorch", "Pandas", "SQL"]
+        verifiedSkills: ["Python", "PyTorch", "Pandas", "SQL"],
+        bio: "Turning messy data into actionable insights. PhD in Statistics.",
+        location: "Boston, USA"
     },
     {
         id: "u5",
@@ -311,6 +346,51 @@ export const MOCK_PORTFOLIO_ITEMS: PortfolioItem[] = [
         skills: ["Python", "NLP", "TensorFlow"],
         description: "Trained a natural language processing model to automate support responses.",
         verifiedBy: "Quantum Systems"
+    }
+];
+
+// --- MOCK ANALYSIS DATA ---
+export const MOCK_JOB_ANALYSIS: JobAnalysis = {
+    id: "analysis_123",
+    jobDescriptionSnippet: "We are looking for a Senior React Engineer with experience in Next.js and Tailwind... The ideal candidate loves fast-paced environments...",
+    extractedSkills: [
+        { name: "React", importance: "HIGH" },
+        { name: "Next.js", importance: "HIGH" },
+        { name: "Tailwind CSS", importance: "MEDIUM" },
+        { name: "TypeScript", importance: "MEDIUM" },
+    ],
+    detectedLevel: "SENIOR",
+    estimatedSalaryRange: "$140k - $180k",
+    culturalSignals: ["Fast-paced", "Ownership", "Product-minded"]
+};
+
+// --- MOCK MATCHES ---
+export const MOCK_MATCHES: MatchResult[] = [
+    {
+        candidateId: "u1", // Alex Rivera
+        jobAnalysisId: "analysis_123",
+        matchScore: 92,
+        matchReasons: [
+            { type: "SKILL", description: "Mastery of React & Tailwind (Verified)", isPositive: true },
+            { type: "VIBE", description: "Strong portfolio focus aligns with product mindset", isPositive: true },
+        ]
+    },
+    {
+        candidateId: "u3", // Jordan
+        jobAnalysisId: "analysis_123",
+        matchScore: 45,
+        matchReasons: [
+            { type: "SKILL", description: "Design focus, not Engineering", isPositive: false },
+        ]
+    },
+    {
+        candidateId: "u2", // Sarah Chen
+        jobAnalysisId: "analysis_123",
+        matchScore: 65,
+        matchReasons: [
+            { type: "SKILL", description: "Strong Engineering background but specialized in Backend", isPositive: false },
+            { type: "EXPERIENCE", description: "Matches Seniority level", isPositive: true }
+        ]
     }
 ];
 

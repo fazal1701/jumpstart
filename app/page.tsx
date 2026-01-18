@@ -6,6 +6,8 @@ import { SectionProblem } from "@/components/section-problem"
 import { SectionInnovation } from "@/components/section-innovation"
 import { SectionMVP } from "@/components/section-mvp"
 import { SectionShowcase } from "@/components/section-showcase"
+import { JobAnalyzer } from "@/components/job-analyzer"
+import { SmartMatchList } from "@/components/smart-match-list"
 import {
   ArrowRight,
 } from "lucide-react"
@@ -44,6 +46,8 @@ export default function LandingPage() {
         </section>
 
         <SectionProblem />
+        <JobAnalyzer />
+        <SmartMatchList />
         <SectionInnovation />
         <SectionShowcase />
         <SectionMVP />

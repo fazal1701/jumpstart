@@ -8,11 +8,11 @@ import { Button } from "@/components/ui/button"
 import { Card, CardContent, CardFooter, CardHeader } from "@/components/ui/card"
 import { Input } from "@/components/ui/input"
 import { Badge } from "@/components/ui/badge"
-import { 
-  Search, 
-  Filter, 
-  Clock, 
-  DollarSign, 
+import {
+  Search,
+  Filter,
+  Clock,
+  DollarSign,
   Building2,
   Users,
   ArrowRight,
@@ -152,9 +152,10 @@ export default function TasksPage() {
 
   return (
     <Suspense fallback={<Loading />}>
-      <div className="flex min-h-screen flex-col">
+      <div className="flex min-h-screen flex-col theme-tasks">
         <Navigation />
-        
+
+
         <main className="flex-1">
           {/* Header */}
           <section className="border-b border-border bg-muted/30">
@@ -261,8 +262,8 @@ export default function TasksPage() {
               {filteredTasks.length === 0 && (
                 <div className="py-12 text-center">
                   <p className="text-lg text-muted-foreground">No tasks found matching your criteria.</p>
-                  <Button 
-                    variant="outline" 
+                  <Button
+                    variant="outline"
                     className="mt-4 bg-transparent"
                     onClick={() => {
                       setSearchQuery("")

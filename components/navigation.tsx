@@ -9,10 +9,12 @@ import { Menu, X, Briefcase, User, Building2, BarChart3 } from "lucide-react"
 
 const navLinks = [
   { href: "/tasks", label: "Browse Tasks" },
+  { href: "/learn", label: "Learn" },
   { href: "/how-it-works", label: "How It Works" },
   { href: "/for-employers", label: "For Employers" },
   { href: "/pricing", label: "Pricing" },
 ]
+
 
 export function Navigation() {
   const pathname = usePathname()
@@ -28,7 +30,7 @@ export function Navigation() {
             </div>
             <span className="text-xl font-semibold tracking-tight">SkillForge</span>
           </Link>
-          
+
           <div className="hidden md:flex md:gap-6">
             {navLinks.map((link) => (
               <Link
@@ -143,7 +145,7 @@ export function DashboardNavigation({ userType }: { userType: "candidate" | "emp
             </div>
             <span className="text-xl font-semibold tracking-tight">SkillForge</span>
           </Link>
-          
+
           <div className="hidden md:flex md:gap-1">
             {links.map((link) => {
               const Icon = link.icon

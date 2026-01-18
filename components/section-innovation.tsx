@@ -2,6 +2,13 @@
 
 import Image from "next/image"
 import { motion } from "framer-motion"
+import { Briefcase, Bot, Trophy } from "lucide-react"
+
+const features = [
+    { icon: Briefcase, title: "Real Tasks", desc: "Candidates complete paid, real-world work, not quizzes." },
+    { icon: Bot, title: "AI Evaluation", desc: "Quality and outcomes are instantly analyzed and scored." },
+    { icon: Trophy, title: "Verified Portfolio", desc: "Portfolios built from verified work proven on the platform." }
+]
 
 export function SectionInnovation() {
     return (
@@ -41,27 +48,29 @@ export function SectionInnovation() {
                 </motion.div>
 
                 <div className="grid gap-8 md:grid-cols-3">
-                    {[
-                        { icon: "💼", title: "Real Tasks", desc: "Candidates complete paid, real-world work, not quizzes." },
-                        { icon: "🤖", title: "AI Evaluation", desc: "Quality and outcomes are instantly analyzed and scored." },
-                        { icon: "🏆", title: "Verified Portfolio", desc: "Portfolios built from verified work proven on the platform." }
-                    ].map((feature, i) => (
-                        <motion.div
-                            key={i}
-                            initial={{ opacity: 0, y: 20 }}
-                            whileInView={{ opacity: 1, y: 0 }}
-                            viewport={{ once: true }}
-                            transition={{ duration: 0.5, delay: i * 0.1 }}
-                            whileHover={{ y: -5 }}
-                            className="flex flex-col items-center text-center space-y-3 p-8 rounded-2xl bg-background shadow-md border hover:border-primary/30 transition-all duration-300"
-                        >
-                            <div className="text-5xl mb-2">{feature.icon}</div>
-                            <h3 className="text-xl font-bold">{feature.title}</h3>
-                            <p className="text-sm text-muted-foreground leading-relaxed">{feature.desc}</p>
-                        </motion.div>
-                    ))}
+                    {features.map((feature, i) => {
+                        const Icon = feature.icon
+                        return (
+                            <motion.div
+                                key={i}
+                                initial={{ opacity: 0, y: 20 }}
+                                whileInView={{ opacity: 1, y: 0 }}
+                                viewport={{ once: true }}
+                                transition={{ duration: 0.5, delay: i * 0.1 }}
+                                whileHover={{ y: -5 }}
+                                className="flex flex-col items-center text-center space-y-3 p-8 rounded-2xl bg-background shadow-md border hover:border-primary/30 transition-all duration-300"
+                            >
+                                <div className="h-14 w-14 rounded-2xl bg-primary/10 flex items-center justify-center mb-2">
+                                    <Icon className="h-7 w-7 text-primary" />
+                                </div>
+                                <h3 className="text-xl font-bold">{feature.title}</h3>
+                                <p className="text-sm text-muted-foreground leading-relaxed">{feature.desc}</p>
+                            </motion.div>
+                        )
+                    })}
                 </div>
             </div>
         </section>
     )
 }
+

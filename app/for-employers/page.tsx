@@ -9,8 +9,9 @@ import { motion } from "framer-motion"
 
 export default function ForEmployersPage() {
     return (
-        <div className="min-h-screen">
+        <div className="min-h-screen theme-employers">
             {/* Hero */}
+
             <section className="py-24 bg-black text-white text-center px-4 overflow-hidden">
                 <div className="container max-w-4xl mx-auto space-y-6">
                     <motion.div

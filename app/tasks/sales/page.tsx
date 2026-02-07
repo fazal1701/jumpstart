@@ -11,8 +11,9 @@ import { Button } from "@/components/ui/button"
 const salesTasks = [
   {
     id: "sal_1",
-    title: "Cold Outreach Campaign: 50 Personalized Emails",
+    title: "Cold Outreach Campaign: 50 Personalized B2B Emails",
     company: "Atlas Labs",
+    description: "Execute a cold outreach campaign that actually gets responses. This task proves you can research prospects, write compelling cold emails, and start conversations that lead to meetings. Sales teams need SDRs who can fill the pipeline - show you're one of them.",
     logo: "https://images.unsplash.com/photo-1599305445671-ac291c95aaa9?w=200&h=200&fit=crop",
     reward: 400,
     duration: "4-5 hours",
@@ -20,35 +21,77 @@ const salesTasks = [
     skills: ["Cold Email", "Prospecting", "LinkedIn", "Copywriting"],
     image: "https://images.unsplash.com/photo-1553877522-43269d4ea984?w=1200&h=800&fit=crop&q=80",
     submissions: 42,
+    requirements: [
+      "50 personalized emails to target prospects",
+      "Prospect research & qualification",
+      "3 follow-up sequences per prospect",
+      "LinkedIn connection messages",
+      "Response rate tracking plan"
+    ],
+    deliverables: [
+      "Prospect list with research notes",
+      "Email templates & variations",
+      "Follow-up sequence scripts",
+      "Outreach performance metrics"
+    ]
   },
   {
     id: "sal_2",
-    title: "Sales Pitch Deck: B2B SaaS Solution",
+    title: "Sales Pitch Deck: B2B SaaS Solution Presentation",
     company: "Nexus AI",
+    description: "Build a compelling sales deck that closes deals. This task demonstrates your ability to tell a story, position value, handle objections, and structure a pitch that AEs actually use. Enterprise sales teams look for exactly this skill.",
     logo: "https://images.unsplash.com/photo-1620712943543-bcc4688e7485?w=200&h=200&fit=crop",
     reward: 600,
     duration: "5-7 hours",
     difficulty: "Mid-Level",
     skills: ["PowerPoint", "Sales Strategy", "Storytelling", "Design"],
-    image: "https://images.unsplash.com/photo-1557804506-669a67965ba0?w=1200&h=800&fit=crop&q=80",
+    image: "https://images.unsplash.com/photo-1552664730-d307ca884978?w=1200&h=800&fit=crop&q=80",
     submissions: 26,
+    requirements: [
+      "15-20 slide pitch deck",
+      "Problem-solution-value structure",
+      "Competitive differentiation slides",
+      "Case studies & social proof",
+      "Clear pricing & CTA"
+    ],
+    deliverables: [
+      "PowerPoint/Keynote deck",
+      "Presenter notes for each slide",
+      "Objection handling guide",
+      "Leave-behind one-pager"
+    ]
   },
   {
     id: "sal_3",
-    title: "Lead Qualification: Score 200 Inbound Leads",
+    title: "Lead Qualification Framework: Score 200 Inbound Leads",
     company: "Velocity Growth",
+    description: "Build a system to qualify leads at scale. This task proves you understand lead scoring, can prioritize opportunities, and maximize sales team efficiency. RevOps and sales teams need this exact framework to scale their pipeline.",
     logo: "https://images.unsplash.com/photo-1557426272-fc759fdf7a8d?w=200&h=200&fit=crop",
     reward: 450,
     duration: "4-6 hours",
     difficulty: "Junior",
     skills: ["CRM", "Lead Scoring", "HubSpot", "Excel"],
-    image: "https://images.unsplash.com/photo-1460925895917-afdab827c52f?w=1200&h=800&fit=crop&q=80",
+    image: "https://images.unsplash.com/photo-1454165804606-c3d57bc86b40?w=1200&h=800&fit=crop&q=80",
     submissions: 31,
+    requirements: [
+      "Score 200 leads using criteria",
+      "Prioritize hot/warm/cold categories",
+      "Create qualification checklist",
+      "Document scoring methodology",
+      "Recommend next actions per lead"
+    ],
+    deliverables: [
+      "Scored lead spreadsheet",
+      "Lead qualification framework doc",
+      "HubSpot workflow setup guide",
+      "Follow-up action plan"
+    ]
   },
   {
     id: "sal_4",
-    title: "Sales Playbook: Create Objection Handling Guide",
+    title: "Sales Playbook: Complete Objection Handling Guide",
     company: "TechFlow",
+    description: "Create a battle-tested playbook for handling common objections. This task shows you understand the sales process, can coach reps, and build scalable sales enablement. Sales leaders need playbooks that actually work - prove you can build one.",
     logo: "https://images.unsplash.com/photo-1557804506-669a67965ba0?w=200&h=200&fit=crop",
     reward: 700,
     duration: "6-8 hours",
@@ -56,6 +99,45 @@ const salesTasks = [
     skills: ["Sales Enablement", "Training", "Documentation"],
     image: "https://images.unsplash.com/photo-1531403009284-440f080d1e12?w=1200&h=800&fit=crop&q=80",
     submissions: 15,
+    requirements: [
+      "20+ common objections documented",
+      "Response scripts for each objection",
+      "Discovery question frameworks",
+      "Deal stage-specific strategies",
+      "Training materials & examples"
+    ],
+    deliverables: [
+      "Complete sales playbook (PDF/Notion)",
+      "Objection handling scripts",
+      "Training presentation",
+      "Role-play scenarios"
+    ]
+  },
+  {
+    id: "sal_5",
+    title: "Sales Pipeline Analysis: Revenue Forecast & Deal Review",
+    company: "DataForge",
+    description: "Analyze a sales pipeline and create accurate revenue forecasts. This task proves you understand sales metrics, can spot pipeline health issues, and forecast revenue like a VP of Sales. Critical skill for senior sales and RevOps roles.",
+    logo: "https://images.unsplash.com/photo-1551288049-bebda4e38f71?w=200&h=200&fit=crop",
+    reward: 750,
+    duration: "6-8 hours",
+    difficulty: "Senior",
+    skills: ["Sales Analytics", "Forecasting", "Excel", "Salesforce"],
+    image: "https://images.unsplash.com/photo-1551288049-bebda4e38f71?w=1200&h=800&fit=crop&q=80",
+    submissions: 12,
+    requirements: [
+      "Analyze 100+ deals in pipeline",
+      "Calculate win rates by stage",
+      "90-day revenue forecast",
+      "Identify pipeline gaps",
+      "Recommend actions to hit targets"
+    ],
+    deliverables: [
+      "Pipeline analysis report",
+      "Revenue forecast model",
+      "Deal health dashboard",
+      "Action plan to close gaps"
+    ]
   },
 ]
 

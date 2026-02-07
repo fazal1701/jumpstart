@@ -1,44 +1,75 @@
+/**
+ * @file components/section-steps.tsx
+ * @description "The Path to Execution" — a 4-step workflow section on the landing page.
+ *
+ * BUSINESS CONTEXT (from Business Plan - "How the Work-First Model Operates"):
+ * This section visualizes the core Jumpstart workflow:
+ *
+ * Step 1: MATCH → AI analyzes your skills and matches you with real paid tasks.
+ * Step 2: EXECUTE → Work as an independent contractor on real company projects.
+ * Step 3: VERIFY → AI scores correctness, performance, clarity, and compliance.
+ * Step 4: HIRE → Companies hire pre-vetted operators with proven track records.
+ *
+ * The key insight: the entire cycle compresses hiring from months → 1 week,
+ * at $2-5k total cost, with 90%+ success rates.
+ *
+ * DESIGN:
+ * - Alternating left/right layout (zigzag) on desktop
+ * - Central vertical line connecting steps
+ * - Each step has a color-coded icon, large title, description, and stock photo
+ * - Photos from Unsplash serve as stand-ins for real product screenshots
+ *
+ * IMAGES:
+ * All step images are stock photos from Unsplash. Replace with real product
+ * screenshots showing each step of the Jumpstart workflow when available.
+ */
+
 "use client"
 
 import { motion } from "framer-motion"
-import { Search, Rocket, Trophy, Briefcase } from "lucide-react"
+import { Search, Briefcase, Rocket, Trophy } from "lucide-react"
 import Image from "next/image"
 
 const steps = [
   {
     icon: Search,
     title: "1. Match with a Task",
-    desc: "Our AI analyzes your skills and matches you with real, paid projects from top companies.",
+    desc: "Our AI analyzes your skills and matches you with real, paid projects from top companies. No more mass-applying into the void.",
     color: "bg-blue-500",
-    image: "https://images.unsplash.com/photo-1454165833762-adc864c3a932?w=800&q=80"
+    /** Unsplash stock: workspace planning scene */
+    image: "https://images.unsplash.com/photo-1454165833762-adc864c3a932?w=800&q=80",
   },
   {
     icon: Briefcase,
     title: "2. Execute the Work",
-    desc: "Work as an independent contractor inside the company's live environment. Ship real features.",
+    desc: "Work as an independent contractor inside the company's live environment. Ship real features, create real assets, solve real problems.",
     color: "bg-purple-500",
-    image: "https://images.unsplash.com/photo-1552664730-d307ca884978?w=800&q=80"
+    /** Unsplash stock: team collaboration scene */
+    image: "https://images.unsplash.com/photo-1552664730-d307ca884978?w=800&q=80",
   },
   {
     icon: Rocket,
     title: "3. Get AI-Verified",
-    desc: "Your code and impact are instantly scored by our engine and verified by employer stakeholders.",
+    desc: "Your code, designs, and deliverables are instantly scored by our AI engine. Quality, correctness, and impact — all measured objectively.",
     color: "bg-emerald-500",
-    image: "https://images.unsplash.com/photo-1633356122544-f134324a6cee?w=800&q=80"
+    /** Unsplash stock: coding/tech scene */
+    image: "https://images.unsplash.com/photo-1633356122544-f134324a6cee?w=800&q=80",
   },
   {
     icon: Trophy,
     title: "4. Get Hired",
-    desc: "Move to the top of the funnel. Companies hire pre-vetted operators with proven track records.",
+    desc: "Move to the top of the funnel. Companies hire pre-vetted operators with proven track records. Your Execution Ledger replaces your résumé.",
     color: "bg-orange-500",
-    image: "https://images.unsplash.com/photo-1521737711867-e3b97375f902?w=800&q=80"
-  }
+    /** Unsplash stock: celebration/success scene */
+    image: "https://images.unsplash.com/photo-1521737711867-e3b97375f902?w=800&q=80",
+  },
 ]
 
 export function SectionSteps() {
   return (
     <section className="py-32 bg-background overflow-hidden">
       <div className="container px-4 md:px-6">
+        {/* ── Section Header ── */}
         <div className="flex flex-col items-center text-center space-y-4 mb-20">
           <h2 className="text-4xl font-black tracking-tight sm:text-6xl">
             The Path to <span className="text-primary">Execution</span>
@@ -48,16 +79,23 @@ export function SectionSteps() {
           </p>
         </div>
 
+        {/* ── Zigzag Step Layout ── */}
         <div className="relative">
-          {/* Central Line for Desktop */}
+          {/* Central connecting line (desktop only) */}
           <div className="absolute left-1/2 top-0 bottom-0 w-px bg-border hidden lg:block" />
 
           <div className="space-y-24 lg:space-y-48">
             {steps.map((step, i) => {
               const Icon = step.icon
               const isEven = i % 2 === 0
+
               return (
-                <div key={i} className={`flex flex-col lg:flex-row items-center gap-12 lg:gap-24 ${isEven ? 'lg:flex-row' : 'lg:flex-row-reverse'}`}>
+                <div
+                  key={i}
+                  className={`flex flex-col lg:flex-row items-center gap-12 lg:gap-24 ${
+                    isEven ? "lg:flex-row" : "lg:flex-row-reverse"
+                  }`}
+                >
                   {/* Text Content */}
                   <motion.div
                     initial={{ opacity: 0, x: isEven ? -50 : 50 }}
@@ -66,18 +104,22 @@ export function SectionSteps() {
                     transition={{ duration: 0.6, type: "spring" }}
                     className="flex-1 space-y-6"
                   >
-                    <div className={`h-16 w-16 rounded-2xl ${step.color} flex items-center justify-center text-white shadow-xl rotate-3`}>
+                    <div
+                      className={`h-16 w-16 rounded-2xl ${step.color} flex items-center justify-center text-white shadow-xl rotate-3`}
+                    >
                       <Icon className="h-8 w-8" />
                     </div>
                     <h3 className="text-3xl font-black tracking-tight md:text-5xl">{step.title}</h3>
                     <p className="text-xl text-muted-foreground leading-relaxed">{step.desc}</p>
                     <div className="flex items-center gap-4 pt-4">
-                        <div className="h-1 w-12 bg-primary rounded-full" />
-                        <span className="text-sm font-bold uppercase tracking-widest text-primary">Proven Process</span>
+                      <div className="h-1 w-12 bg-primary rounded-full" />
+                      <span className="text-sm font-bold uppercase tracking-widest text-primary">
+                        Proven Process
+                      </span>
                     </div>
                   </motion.div>
 
-                  {/* Image/Visual */}
+                  {/* Image Visual */}
                   <motion.div
                     initial={{ opacity: 0, scale: 0.8, x: isEven ? 50 : -50 }}
                     whileInView={{ opacity: 1, scale: 1, x: 0 }}
@@ -102,4 +144,3 @@ export function SectionSteps() {
     </section>
   )
 }
-

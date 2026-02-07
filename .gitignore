@@ -25,3 +25,7 @@ yarn-error.log*
 # typescript
 *.tsbuildinfo
 next-env.d.ts
+
+# reference docs & PDFs (not source code)
+*.pdf
+/JumpstartTips/

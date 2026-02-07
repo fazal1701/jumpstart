@@ -1,3 +1,34 @@
+/**
+ * @file components/job-analyzer.tsx
+ * @description Interactive AI Job Analyzer demo component.
+ *
+ * BUSINESS CONTEXT (from Business Plan - "How the Work-First Model Operates"):
+ * The Job Analyzer is one of Jumpstart's core features. It takes a raw job
+ * description (pasted by the user) and uses AI to extract:
+ *
+ * 1. Core skills required (with importance levels: HIGH/MEDIUM/LOW)
+ * 2. Detected seniority level (JUNIOR/MID/SENIOR)
+ * 3. Estimated salary range
+ * 4. Cultural signals (e.g., "Fast-paced", "Ownership", "Product-minded")
+ *
+ * This replaces keyword-matching with true operational requirement extraction.
+ * The analyzer identifies 15+ latent operational signals that traditional
+ * job boards miss entirely.
+ *
+ * CURRENT STATE: This is a MOCK implementation. The "Analyze" button triggers
+ * a 2-second fake loading animation, then displays pre-configured results from
+ * MOCK_JOB_ANALYSIS in lib/mock-data.ts. Replace with real API call when the
+ * backend is built.
+ *
+ * DESIGN:
+ * - Two-column card layout: Job Description textarea (left) + Results (right)
+ * - Loading state: Spinning loader with "AI at work..." message
+ * - Results: Skills badges, stat cards, cultural signals list
+ *
+ * IMAGE:
+ * /images/ai-scan-visual.png → Decorative placeholder shown before analysis runs
+ */
+
 "use client"
 
 import { useState } from "react"

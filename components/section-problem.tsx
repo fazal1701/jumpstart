@@ -1,152 +1,137 @@
+/**
+ * @file components/section-problem.tsx
+ * @description "The Problem" section on the Jumpstart landing page.
+ *
+ * BUSINESS CONTEXT (from Business Plan - "Five Forces"):
+ * This section communicates WHY Jumpstart exists by articulating the broken
+ * state of early-career hiring:
+ *
+ * 1. Résumés are dead → 80% contain exaggerated/fabricated experience.
+ *    AI-generated résumés pass AI-powered filters → zero signal.
+ * 2. Interviews fail  → Interview performance correlates with job performance
+ *    at only 0.15 (basically a coin flip).
+ * 3. Gen Z is struggling → 67% live with "single paycheck panic",
+ *    48% rely on side hustles, but earn only $2-5k/year.
+ * 4. Companies waste money → $50-100k per entry-level hire, only to discover
+ *    the candidate can't actually do the job.
+ *
+ * DESIGN:
+ * - Three problem cards in a grid (Résumés, Interviews, Gen Z struggle)
+ * - Each card has an icon, stat, title, and description
+ * - A large visual image on the right (or below on mobile)
+ * - Animated entrance with Framer Motion
+ *
+ * IMAGE:
+ * Uses /images/problem-visual.png as a decorative visual.
+ * Replace with a real product screenshot when available.
+ */
+
 "use client"
 
 import Image from "next/image"
-import { Card, CardContent } from "@/components/ui/card"
-import { motion, useScroll, useTransform } from "framer-motion"
-import { XCircle, AlertTriangle, Ghost, Ban } from "lucide-react"
-import { useRef } from "react"
+import { motion } from "framer-motion"
+import { AlertTriangle, FileX, Clock, TrendingDown } from "lucide-react"
 
+/** Problem data aligned with the Jumpstart Business Plan "Five Forces" */
 const problems = [
   {
-    icon: XCircle,
-    title: "Résumé Inflation",
-    desc: "AI-generated résumés have flooded the market. Keywords are easy to fake; execution isn't.",
-    color: "text-red-500",
-    bg: "bg-red-500/10"
+    icon: FileX,
+    stat: "80%",
+    title: "Résumés Are Fabricated",
+    description:
+      "80% of résumés contain exaggerated or fabricated experience. AI-generated résumés now pass AI-powered filters, making traditional screening meaningless.",
   },
   {
-    icon: AlertTriangle,
-    title: "The Experience Gap",
-    desc: "Entry-level jobs now require 3 years of experience. How do you start without starting?",
-    color: "text-amber-500",
-    bg: "bg-amber-500/10"
+    icon: Clock,
+    stat: "0.15",
+    title: "Interviews Don't Predict",
+    description:
+      "Interview performance correlates with job performance at only 0.15. Companies spend months on a process that's essentially a coin flip.",
   },
   {
-    icon: Ghost,
-    title: "Ghosting Epidemic",
-    desc: "Candidates apply to 200+ jobs only to get zero feedback. It's a black hole of talent.",
-    color: "text-purple-500",
-    bg: "bg-purple-500/10"
+    icon: TrendingDown,
+    stat: "67%",
+    title: "Gen Z Under Pressure",
+    description:
+      "67% of Gen Z lives with single-paycheck panic. They can't wait months for hiring cycles — they need income, proof, and clear pathways now.",
   },
-  {
-    icon: Ban,
-    title: "Credential Bias",
-    desc: "Prestige-based hiring overlooks the high-output operators who lack a top-tier degree.",
-    color: "text-blue-500",
-    bg: "bg-blue-500/10"
-  }
 ]
 
 export function SectionProblem() {
-    const containerRef = useRef(null)
-    const { scrollYProgress } = useScroll({
-        target: containerRef,
-        offset: ["start end", "end start"]
-    })
+  return (
+    <section className="py-24 bg-muted/20 relative overflow-hidden">
+      <div className="container px-4 md:px-6">
+        {/* ── Section Header ── */}
+        <motion.div
+          initial={{ opacity: 0, y: 20 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+          className="text-center space-y-4 mb-16"
+        >
+          <div className="inline-flex items-center gap-2 text-destructive">
+            <AlertTriangle className="h-5 w-5" />
+            <span className="text-sm font-bold uppercase tracking-widest">The Problem</span>
+          </div>
+          <h2 className="text-3xl font-bold tracking-tighter sm:text-4xl md:text-5xl text-balance">
+            The Hiring System Is Broken
+          </h2>
+          <p className="mx-auto max-w-[700px] text-muted-foreground md:text-xl">
+            Résumés lie. Interviews fail. And Gen Z is stuck in a credibility arms race
+            where both sides automate against each other.
+          </p>
+        </motion.div>
 
-    const y = useTransform(scrollYProgress, [0, 1], [0, -100])
-
-    return (
-        <section ref={containerRef} className="py-32 bg-background relative overflow-hidden">
-            {/* Decorative background blur */}
-            <div className="absolute top-1/2 left-0 -translate-y-1/2 w-96 h-96 bg-destructive/10 blur-[120px] rounded-full pointer-events-none" />
-            
-            <div className="container px-4 md:px-6 relative z-10">
-                <div className="flex flex-col lg:flex-row gap-16 items-center">
-                    <div className="lg:w-1/2 space-y-12">
-                        <div className="space-y-4">
-                            <motion.span
-                                initial={{ opacity: 0, x: -20 }}
-                                whileInView={{ opacity: 1, x: 0 }}
-                                viewport={{ once: true }}
-                                className="text-destructive font-bold uppercase tracking-widest text-sm"
-                            >
-                                The Problem
-                            </motion.span>
-                            <motion.h2
-                                initial={{ opacity: 0, y: 20 }}
-                                whileInView={{ opacity: 1, y: 0 }}
-                                viewport={{ once: true }}
-                                className="text-4xl font-bold tracking-tight sm:text-5xl md:text-6xl text-balance leading-tight"
-                            >
-                                Hiring Signals are <span className="relative inline-block">
-                                    <span className="relative z-10 text-destructive">Broken.</span>
-                                    <motion.span
-                                        initial={{ width: 0 }}
-                                        whileInView={{ width: "100%" }}
-                                        viewport={{ once: true }}
-                                        transition={{ delay: 0.5, duration: 0.8 }}
-                                        className="absolute bottom-2 left-0 h-3 bg-destructive/10 -z-0"
-                                    />
-                                </span>
-                            </motion.h2>
-                            <motion.p
-                                initial={{ opacity: 0, y: 20 }}
-                                whileInView={{ opacity: 1, y: 0 }}
-                                viewport={{ once: true }}
-                                transition={{ delay: 0.1 }}
-                                className="text-xl text-muted-foreground max-w-xl"
-                            >
-                                The traditional recruiting funnel is collapsing under the weight of noise, bias, and generic credentials.
-                            </motion.p>
-                        </div>
-
-                        <div className="grid gap-6 sm:grid-cols-2">
-                            {problems.map((prob, i) => {
-                                const Icon = prob.icon
-                                return (
-                                    <motion.div
-                                        key={i}
-                                        initial={{ opacity: 0, y: 20 }}
-                                        whileInView={{ opacity: 1, y: 0 }}
-                                        viewport={{ once: true }}
-                                        transition={{ delay: i * 0.1 }}
-                                        className="space-y-3"
-                                    >
-                                        <div className={`h-10 w-10 rounded-lg ${prob.bg} flex items-center justify-center`}>
-                                            <Icon className={`h-5 w-5 ${prob.color}`} />
-                                        </div>
-                                        <h3 className="text-lg font-bold">{prob.title}</h3>
-                                        <p className="text-sm text-muted-foreground leading-relaxed">{prob.desc}</p>
-                                    </motion.div>
-                                )
-                            })}
-                        </div>
+        {/* ── Two-Column Layout: Problems + Visual ── */}
+        <div className="grid gap-12 lg:grid-cols-2 items-center">
+          {/* Left: Problem Cards */}
+          <div className="space-y-6">
+            {problems.map((problem, i) => {
+              const Icon = problem.icon
+              return (
+                <motion.div
+                  key={i}
+                  initial={{ opacity: 0, x: -30 }}
+                  whileInView={{ opacity: 1, x: 0 }}
+                  viewport={{ once: true }}
+                  transition={{ duration: 0.5, delay: i * 0.15 }}
+                  className="flex items-start gap-5 p-6 rounded-2xl bg-background border shadow-sm hover:shadow-md transition-shadow"
+                >
+                  <div className="h-12 w-12 rounded-xl bg-destructive/10 flex items-center justify-center shrink-0">
+                    <Icon className="h-6 w-6 text-destructive" />
+                  </div>
+                  <div className="space-y-2">
+                    <div className="flex items-baseline gap-3">
+                      <span className="text-3xl font-black text-destructive">{problem.stat}</span>
+                      <h3 className="text-lg font-bold">{problem.title}</h3>
                     </div>
+                    <p className="text-sm text-muted-foreground leading-relaxed">
+                      {problem.description}
+                    </p>
+                  </div>
+                </motion.div>
+              )
+            })}
+          </div>
 
-                    <motion.div
-                        style={{ y }}
-                        className="lg:w-1/2 relative"
-                    >
-                        <div className="relative aspect-square rounded-3xl overflow-hidden border-2 border-border shadow-2xl group">
-                            <Image
-                                src="/images/problem-visual.png"
-                                alt="Broken Hiring Visualization"
-                                fill
-                                className="object-cover transition-transform duration-700 group-hover:scale-110"
-                            />
-                            <div className="absolute inset-0 bg-gradient-to-t from-background via-transparent to-transparent opacity-60" />
-                            
-                            {/* Floating UI element */}
-                            <motion.div
-                                animate={{ y: [0, -10, 0] }}
-                                transition={{ duration: 4, repeat: Infinity, ease: "easeInOut" }}
-                                className="absolute top-10 right-10 bg-background/90 backdrop-blur-md p-4 rounded-2xl border shadow-xl max-w-[200px]"
-                            >
-                                <div className="flex items-center gap-2 mb-2">
-                                    <div className="h-2 w-2 rounded-full bg-destructive animate-pulse" />
-                                    <span className="text-[10px] font-bold uppercase text-muted-foreground tracking-tighter">Signal Interference</span>
-                                </div>
-                                <p className="text-xs font-medium leading-tight">"94% of recruiters say they struggle to find qualified candidates despite 10x more applications."</p>
-                            </motion.div>
-                        </div>
-
-                        {/* Background decorative square */}
-                        <div className="absolute -bottom-8 -left-8 w-32 h-32 border-2 border-destructive/20 rounded-2xl -z-10" />
-                        <div className="absolute -top-8 -right-8 w-64 h-64 bg-primary/5 rounded-full blur-3xl -z-10" />
-                    </motion.div>
-                </div>
-            </div>
-        </section>
-    )
+          {/* Right: Decorative Visual */}
+          <motion.div
+            initial={{ opacity: 0, scale: 0.9 }}
+            whileInView={{ opacity: 1, scale: 1 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.8 }}
+            className="relative aspect-square overflow-hidden rounded-3xl border bg-muted shadow-2xl"
+          >
+            <Image
+              src="/images/problem-visual.png"
+              alt="Broken hiring pipeline visualization — résumés going into a black hole"
+              fill
+              className="object-cover"
+            />
+            {/* Gradient overlay for text readability if we add text later */}
+            <div className="absolute inset-0 bg-gradient-to-t from-black/30 to-transparent" />
+          </motion.div>
+        </div>
+      </div>
+    </section>
+  )
 }

@@ -1,4 +1,26 @@
+/**
+ * @file components/smart-match-list.tsx
+ * @description Smart Match List — shows AI-powered candidate-to-job matching.
+ *
+ * BUSINESS CONTEXT (from Business Plan):
+ * Smart Matching is how Jumpstart surfaces the right candidates for each task.
+ * Unlike traditional job boards that match on keywords, Jumpstart matches on:
+ *
+ * - SKILL: Verified skill proof from completed tasks (not self-reported)
+ * - EXPERIENCE: Seniority level derived from task complexity and AI scores
+ * - VIBE: Cultural alignment signals (e.g., "product-minded", "ownership")
+ *
+ * Each match includes:
+ * - A match score (0-100%) shown as an animated circular progress indicator
+ * - Match reasons (positive or negative) explaining WHY the score is what it is
+ * - The candidate's verified skills and portfolio items
+ *
+ * CURRENT STATE: Mock data from MOCK_MATCHES in lib/mock-data.ts.
+ * Replace with real API data when the matching engine is built.
+ */
+
 "use client"
+
 import Link from "next/link"
 import { Card, CardContent } from "@/components/ui/card"
 import { Badge } from "@/components/ui/badge"

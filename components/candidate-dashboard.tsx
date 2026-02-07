@@ -1,3 +1,30 @@
+/**
+ * @file components/candidate-dashboard.tsx
+ * @description Candidate (Gen Z Talent) Dashboard — the main authenticated view.
+ *
+ * BUSINESS CONTEXT (from Business Plan - "Benefits for Gen Z"):
+ * This dashboard is the candidate's command center. After signing up, they see:
+ *
+ * 1. Total Earnings  → Real income earned from completed tasks
+ * 2. Tasks Completed → Number of verified task submissions
+ * 3. Average Rating  → AI-scored quality rating across all work
+ * 4. Next Milestone  → Progress toward the next skill level (Junior → Mid → Senior)
+ *
+ * The dashboard also shows:
+ * - Active tasks in progress (with deadlines and company names)
+ * - Recommended tasks based on verified skills (AI-matched)
+ * - Verified skill graph (visual representation of capabilities)
+ * - Achievement badges earned through platform activity
+ *
+ * CURRENT STATE: Fully mock data. The user shown is MOCK_CANDIDATES[0] ("Alex Rivera").
+ * All stats, tasks, and recommendations are hardcoded.
+ *
+ * IMAGES:
+ * - User avatar from i.pravatar.cc (mock)
+ * - Task thumbnails from /images/ (local mock screenshots)
+ * - Skill graph from /images/skill-graph.png (mock visualization)
+ */
+
 import Link from "next/link"
 import Image from "next/image"
 import { Button } from "@/components/ui/button"

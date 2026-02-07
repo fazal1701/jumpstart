@@ -1,9 +1,49 @@
+/**
+ * @file lib/mock-data.ts
+ * @description Centralized mock data for the entire Jumpstart platform.
+ *
+ * PURPOSE:
+ * This file contains ALL mock data used across the app. It serves as the
+ * single source of truth for prototyping and demo purposes until we have
+ * a real backend API.
+ *
+ * ARCHITECTURE:
+ * The data is organized into logical sections matching the Jumpstart business model:
+ *
+ * 1. TYPES & INTERFACES  → TypeScript contracts for all data shapes
+ * 2. LEARNING DATA        → Sectors, Courses, Experts, Tools (the "Learn" section)
+ * 3. USERS (Candidates)   → Gen Z talent profiles with verified skills
+ * 4. COMPANIES            → Employer profiles that post tasks
+ * 5. TASKS                → The core marketplace — real paid work items ($150-$2,000)
+ * 6. PORTFOLIO ITEMS      → Verified work samples (images + videos)
+ * 7. JOB ANALYSIS         → AI analyzer mock results (extracted skills, cultural signals)
+ * 8. SMART MATCHES        → AI matching results (candidate ↔ job compatibility)
+ * 9. EXECUTION LEDGER     → Verified work history (replaces the résumé)
+ * 10. HELPER FUNCTIONS    → Lookup utilities (getCompanyById, getCandidateById, etc.)
+ *
+ * BUSINESS CONTEXT:
+ * Jumpstart is "Fiverr meets bounty hunting" for early-career talent.
+ * - Companies post scoped, paid tasks ($200-$2,000)
+ * - Gen Z executes the work and earns immediate income
+ * - AI evaluates quality, correctness, and impact
+ * - A verified "Execution Ledger" replaces the traditional résumé
+ * - Jumpstart earns 25% commission on each task
+ *
+ * WHEN TO REPLACE:
+ * Each mock data array should be replaced with real API calls when the
+ * corresponding backend endpoint is built. See ARCHITECTURE.md for the
+ * API design plan.
+ */
+
+// ═══════════════════════════════════════════════════
+// SECTION 1: TYPES & INTERFACES
+// ═══════════════════════════════════════════════════
 
 export type UserRole = 'CANDIDATE' | 'COMPANY' | 'ADMIN';
 export type SkillLevel = 'JUNIOR' | 'MID' | 'SENIOR';
 export type TaskStatus = 'OPEN' | 'IN_PROGRESS' | 'COMPLETED' | 'CLOSED';
 
-// --- NEW INTERFACES FOR LEARNING ---
+// --- LEARNING INTERFACES ---
 
 export interface Tool {
     id: string;

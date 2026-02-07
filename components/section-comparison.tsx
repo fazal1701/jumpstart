@@ -1,144 +1,115 @@
-/**
- * @file components/section-comparison.tsx
- * @description "Why Jumpstart Is Different" comparison section on the landing page.
- *
- * BUSINESS CONTEXT (from Business Plan - "Competitive Advantage"):
- * This section positions Jumpstart against two incumbents:
- *
- * 1. Traditional Education (Universities)
- *    - Only 30% of graduates secure jobs in their field
- *    - Degrees signal potential, not execution ability
- *    - Career centers still teach résumé writing despite it being obsolete
- *
- * 2. MOOCs (Coursera, Udemy)
- *    - Certificates signal learning, not capability
- *    - Optimized for content consumption, not real-world execution
- *    - No proof of impact or production context
- *
- * 3. Jumpstart (Our Model)
- *    - Work-first: candidates execute real paid tasks
- *    - AI-verified: quality and outcomes are instantly scored
- *    - Direct pipeline: top performers get hired, not just certified
- *
- * DESIGN:
- * - Three-column comparison grid (Trad. Education | MOOCs | Jumpstart)
- * - Red X icons for incumbents, Green checkmarks for Jumpstart
- * - Jumpstart card has a primary ring to draw the eye
- * - Staggered entrance animation
- */
-
 "use client"
 
 import { motion } from "framer-motion"
-import { CheckCircle2, XCircle } from "lucide-react"
+import { CheckCircle2, XCircle, GraduationCap, BookOpen, Zap } from "lucide-react"
 
-/** Each competitor card's data */
 const comparisons = [
   {
     title: "Traditional Education",
-    subtitle: "Degrees signal potential, not execution ability.",
-    accentColor: "red",
-    icon: XCircle,
-    iconBg: "bg-red-500/10",
-    iconColor: "text-red-500",
-    listColor: "text-red-600",
-    ListIcon: XCircle,
-    cardClass: "border bg-muted/30 shadow-lg",
+    icon: GraduationCap,
+    verdict: "fail",
     items: [
-      { bold: "credentials & theory", text: "Optimizes for" },
-      { bold: "PDF résumés, GPA", text: "Employers get" },
-      { bold: "No proof to operate", text: "in real jobs" },
+      "Optimizes for credentials & theory",
+      "Employers get PDF résumés, GPA",
+      "No proof of real-world ability",
     ],
+    cardStyle: "bg-card ring-1 ring-border/50",
   },
   {
     title: "MOOCs (Coursera/Udemy)",
-    subtitle: "Certificates signal learning, not capability.",
-    accentColor: "orange",
-    icon: XCircle,
-    iconBg: "bg-orange-500/10",
-    iconColor: "text-orange-500",
-    listColor: "text-orange-600",
-    ListIcon: XCircle,
-    cardClass: "border bg-muted/30 shadow-lg",
+    icon: BookOpen,
+    verdict: "fail",
     items: [
-      { bold: "content consumption", text: "Optimizes for" },
-      { bold: "quizzes & badges", text: "Learners get" },
-      { bold: "No proof of impact", text: "or production context" },
+      "Optimizes for content consumption",
+      "Learners get quizzes & badges",
+      "No proof of production impact",
     ],
+    cardStyle: "bg-card ring-1 ring-border/50",
   },
   {
     title: "Jumpstart",
-    subtitle: "We verify operational ability inside real job contexts.",
-    accentColor: "primary",
-    icon: CheckCircle2,
-    iconBg: "bg-primary/20",
-    iconColor: "text-primary",
-    listColor: "text-primary",
-    ListIcon: CheckCircle2,
-    cardClass: "border bg-primary/10 shadow-lg ring-2 ring-primary/30",
+    icon: Zap,
+    verdict: "pass",
     items: [
-      { bold: "execution & impact", text: "Optimizes for" },
-      { bold: "verified work samples", text: "Employers get" },
-      { bold: "Direct pipeline", text: "to real hiring" },
+      "Optimizes for execution & impact",
+      "Employers get verified work samples",
+      "Direct pipeline to real hiring",
     ],
+    cardStyle: "bg-gradient-to-br from-primary/10 to-purple-500/5 ring-2 ring-primary/30 shadow-xl shadow-primary/5",
   },
 ]
 
 export function SectionComparison() {
   return (
-    <section className="py-24 bg-background border-t border-border">
-      <div className="container px-4 md:px-6">
-        {/* ── Section Header ── */}
+    <section className="py-28 bg-muted/30 relative overflow-hidden">
+      <div className="absolute inset-0 bg-dots opacity-30" />
+
+      <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 relative z-10">
+        {/* Header */}
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
           className="text-center space-y-4 mb-16"
         >
-          <h2 className="text-3xl font-bold tracking-tighter sm:text-4xl md:text-5xl text-balance">
-            Why Jumpstart is Different
+          <h2 className="text-4xl sm:text-5xl lg:text-6xl font-black tracking-tight">
+            Why Jumpstart Is{" "}
+            <span className="text-gradient">Different</span>
           </h2>
-          <p className="mx-auto max-w-[800px] text-muted-foreground md:text-xl">
-            We&apos;re not just another learning platform. We&apos;re building the new
+          <p className="mx-auto max-w-2xl text-lg text-muted-foreground">
+            We&apos;re not another learning platform. We&apos;re building the new
             standard for talent validation.
           </p>
         </motion.div>
 
-        {/* ── Three-Column Comparison Grid ── */}
-        <div className="grid gap-8 lg:grid-cols-3">
+        {/* Comparison Grid */}
+        <div className="grid gap-6 lg:grid-cols-3">
           {comparisons.map((comp, i) => {
-            const HeaderIcon = comp.icon
-            const ItemIcon = comp.ListIcon
+            const Icon = comp.icon
+            const isPrimary = comp.verdict === "pass"
             return (
               <motion.div
                 key={comp.title}
                 initial={{ opacity: 0, y: 30 }}
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
-                transition={{ duration: 0.6, delay: i * 0.1 }}
-                className={`flex flex-col items-center text-center p-8 rounded-2xl ${comp.cardClass}`}
+                transition={{ duration: 0.5, delay: i * 0.1 }}
+                className={`relative rounded-3xl p-8 ${comp.cardStyle} hover:scale-[1.02] transition-all duration-300`}
               >
-                {/* Icon Circle */}
-                <div className={`h-16 w-16 rounded-full ${comp.iconBg} flex items-center justify-center mb-6`}>
-                  <HeaderIcon className={`h-8 w-8 ${comp.iconColor}`} />
+                {isPrimary && (
+                  <div className="absolute -top-3 left-1/2 -translate-x-1/2">
+                    <span className="bg-gradient-to-r from-primary to-purple-600 text-white text-xs font-bold px-4 py-1.5 rounded-full shadow-lg">
+                      Recommended
+                    </span>
+                  </div>
+                )}
+
+                <div className="flex flex-col items-center text-center">
+                  <div className={`h-16 w-16 rounded-2xl flex items-center justify-center mb-6 ${
+                    isPrimary
+                      ? "bg-gradient-to-br from-primary to-purple-600 text-white shadow-lg shadow-primary/25"
+                      : "bg-muted text-muted-foreground"
+                  }`}>
+                    <Icon className="h-7 w-7" />
+                  </div>
+
+                  <h3 className="text-2xl font-black mb-2">{comp.title}</h3>
+
+                  <ul className="space-y-4 text-left w-full mt-6">
+                    {comp.items.map((item, j) => (
+                      <li key={j} className="flex items-start gap-3">
+                        {isPrimary ? (
+                          <CheckCircle2 className="h-5 w-5 text-primary shrink-0 mt-0.5" />
+                        ) : (
+                          <XCircle className="h-5 w-5 text-muted-foreground/50 shrink-0 mt-0.5" />
+                        )}
+                        <span className={`text-sm ${isPrimary ? "text-foreground font-medium" : "text-muted-foreground"}`}>
+                          {item}
+                        </span>
+                      </li>
+                    ))}
+                  </ul>
                 </div>
-
-                {/* Title & Subtitle */}
-                <h3 className="text-2xl font-bold mb-4">{comp.title}</h3>
-                <p className="text-muted-foreground mb-6">{comp.subtitle}</p>
-
-                {/* Comparison List */}
-                <ul className="space-y-3 text-left w-full max-w-xs">
-                  {comp.items.map((item, j) => (
-                    <li key={j} className={`flex items-center gap-3 ${comp.listColor}`}>
-                      <ItemIcon className="h-5 w-5 shrink-0" />
-                      <span>
-                        {item.text}{" "}
-                        <strong className="text-foreground">{item.bold}</strong>
-                      </span>
-                    </li>
-                  ))}
-                </ul>
               </motion.div>
             )
           })}

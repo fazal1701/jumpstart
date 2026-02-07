@@ -100,11 +100,14 @@ export const SOCIAL_PROOF = {
 // ─────────────────────────────────────────────
 
 export const PARTNER_BRANDS = [
-  "TECHCORP",
-  "FLOWSTATE",
-  "QUANTUM",
-  "NEBULA",
-  "ORBITAL",
+  "STRIPE",
+  "NOTION",
+  "LINEAR",
+  "VERCEL",
+  "FIGMA",
+  "ARC",
+  "LOOM",
+  "RETOOL",
 ] as const
 
 // ─────────────────────────────────────────────

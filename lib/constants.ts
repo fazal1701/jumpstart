@@ -24,9 +24,22 @@
 // ─────────────────────────────────────────────
 
 export const SITE_NAME = "Jumpstart" as const
-export const SITE_TAGLINE = "Stop Applying. Start Executing." as const
+export const SITE_TAGLINE = "Replace Résumés with Real Work" as const
 export const SITE_DESCRIPTION =
-  "Jumpstart is a work-first hiring platform where companies post real paid tasks and Gen Z talent proves their capabilities through verified work." as const
+  "Jumpstart lets anyone — students, career switchers, or professionals — prove ability by doing real, paid work reviewed by industry." as const
+
+// Core Positioning (The One Sentence VCs Will Repeat)
+export const VC_PITCH = "Jumpstart replaces resumes and internships with real, paid work — and turns that work into a hiring pipeline across every modern career." as const
+
+// Monetization Model
+export const REVENUE_MODEL = {
+  commissionRate: 0.25, // 25% platform fee on all tasks
+  candidateFreeApps: 3, // applications per month on free tier
+  candidateProPrice: 9.99, // per month
+  employerStarterPrice: 500, // per month - 5 task posts
+  employerGrowthPrice: 2500, // per month - unlimited posts
+  employerEnterprisePrice: 10000, // per month - white-label + API
+} as const
 
 // ─────────────────────────────────────────────
 // NAVIGATION LINKS
@@ -105,10 +118,38 @@ export const PARTNER_BRANDS = [
   "LINEAR",
   "VERCEL",
   "FIGMA",
-  "ARC",
-  "LOOM",
   "RETOOL",
-] as const
+  "SHOPIFY",
+  "NETFLIX",
+] as const;
+
+// Industries (First-Class Citizen)
+export const INDUSTRIES = [
+  { id: "engineering", name: "Engineering", icon: "Code" },
+  { id: "design", name: "Design", icon: "Palette" },
+  { id: "marketing", name: "Marketing", icon: "TrendingUp" },
+  { id: "sales", name: "Sales", icon: "Users" },
+  { id: "operations", name: "Operations", icon: "Settings" },
+  { id: "data", name: "Data", icon: "BarChart3" },
+] as const;
+
+// Color Palette (Single Consistent Scheme)
+export const COLORS = {
+  primary: "#0f766e", // Teal 700 (dark enough for text)
+  primaryLight: "#14b8a6", // Teal 500
+  primaryDark: "#115e59", // Teal 800
+  accent: "#f59e0b", // Amber 500 (for highlights)
+  success: "#10b981", // Emerald 500
+  error: "#ef4444", // Red 500
+  neutral: {
+    50: "#f9fafb",
+    100: "#f3f4f6",
+    200: "#e5e7eb",
+    300: "#d1d5db",
+    700: "#374151",
+    900: "#111827",
+  }
+} as const;
 
 // ─────────────────────────────────────────────
 // TASK CATEGORIES

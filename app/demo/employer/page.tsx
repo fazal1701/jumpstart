@@ -43,7 +43,7 @@ export default function EmployerDemoPage() {
           <h1 className="text-6xl font-black mb-6 leading-tight">
             Hire Without Resume Spam
           </h1>
-          <p className="text-2xl text-gray-300 max-w-3xl mx-auto mb-8">
+          <p className="text-2xl text-white max-w-3xl mx-auto mb-8">
             See exactly how Atlas Labs finds, evaluates, and hires top engineering talent using Jumpstart. No résumés. Only proven work.
           </p>
           <div className="flex gap-4 justify-center">
@@ -263,13 +263,9 @@ export default function EmployerDemoPage() {
                 ].map((candidate, i) => (
                   <div key={i} className="bg-white rounded-xl border-2 border-gray-200 p-4 hover:border-teal-700 transition-all cursor-pointer">
                     <div className="flex items-center gap-4 mb-3">
-                      <Image
-                        src={`https://i.pravatar.cc/150?u=${candidate.name}`}
-                        alt={candidate.name}
-                        width={48}
-                        height={48}
-                        className="rounded-full border-2 border-gray-200"
-                      />
+                      <div className="w-12 h-12 rounded-full bg-gradient-to-br from-teal-600 to-teal-800 flex items-center justify-center text-white font-bold text-lg border-2 border-gray-200">
+                        {candidate.name.split(' ').map(n => n[0]).join('')}
+                      </div>
                       <div className="flex-1">
                         <div className="flex items-center justify-between mb-1">
                           <h4 className="font-bold text-lg text-black">{candidate.name}</h4>
@@ -391,13 +387,9 @@ export default function EmployerDemoPage() {
               {/* Candidate Profile */}
               <div className="bg-white rounded-2xl border-2 border-gray-200 p-6">
                 <div className="flex items-center gap-4 mb-6">
-                  <Image
-                    src="https://i.pravatar.cc/150?u=priya"
-                    alt="Priya Patel"
-                    width={64}
-                    height={64}
-                    className="rounded-full border-2 border-teal-700"
-                  />
+                  <div className="w-16 h-16 rounded-full bg-gradient-to-br from-teal-600 to-teal-800 flex items-center justify-center text-white font-bold text-2xl border-2 border-teal-700">
+                    PP
+                  </div>
                   <div>
                     <h4 className="text-2xl font-bold text-black">Priya Patel</h4>
                     <p className="text-base text-black">Full Stack Engineer</p>
@@ -460,7 +452,7 @@ export default function EmployerDemoPage() {
           className="bg-gradient-to-br from-teal-700 to-teal-900 text-white rounded-3xl p-12 text-center"
         >
           <h2 className="text-4xl font-black mb-4">Your Hiring ROI with Jumpstart</h2>
-          <p className="text-xl text-gray-200 mb-8 max-w-2xl mx-auto">
+          <p className="text-xl text-white mb-8 max-w-2xl mx-auto">
             Atlas Labs went from 6 weeks to hire to 4 days. You can too.
           </p>
 
@@ -468,17 +460,17 @@ export default function EmployerDemoPage() {
             <div className="bg-white/10 backdrop-blur-sm rounded-2xl p-6">
               <p className="text-5xl font-black mb-2">$2,000</p>
               <p className="text-lg">Cost per hire</p>
-              <p className="text-sm text-gray-300 mt-2">vs. $10,000 traditional</p>
+              <p className="text-sm text-white mt-2">vs. $10,000 traditional</p>
             </div>
             <div className="bg-white/10 backdrop-blur-sm rounded-2xl p-6">
               <p className="text-5xl font-black mb-2">4 days</p>
               <p className="text-lg">Time to hire</p>
-              <p className="text-sm text-gray-300 mt-2">vs. 6 weeks traditional</p>
+              <p className="text-sm text-white mt-2">vs. 6 weeks traditional</p>
             </div>
             <div className="bg-white/10 backdrop-blur-sm rounded-2xl p-6">
               <p className="text-5xl font-black mb-2">0</p>
               <p className="text-lg">Bad hires</p>
-              <p className="text-sm text-gray-300 mt-2">Work proven before hiring</p>
+              <p className="text-sm text-white mt-2">Work proven before hiring</p>
             </div>
           </div>
 

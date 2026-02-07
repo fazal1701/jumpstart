@@ -44,7 +44,7 @@ export default function CandidateDemoPage() {
           <h1 className="text-6xl font-black mb-6 leading-tight">
             Replace Your Résumé with Real Work
           </h1>
-          <p className="text-2xl text-gray-300 max-w-3xl mx-auto mb-8">
+          <p className="text-2xl text-white max-w-3xl mx-auto mb-8">
             See exactly how Sarah Chen went from unemployed to hired in 14 days using Jumpstart. No applications. No interviews. Just work.
           </p>
           <div className="flex gap-4 justify-center">
@@ -136,7 +136,7 @@ export default function CandidateDemoPage() {
               <div className="bg-white rounded-2xl border-2 border-gray-200 overflow-hidden">
                 <div className="relative h-48">
                   <Image
-                    src="https://images.unsplash.com/photo-1460925895917-afdab827c52f?w=800&h=600&fit=crop&q=80"
+                    src="https://images.unsplash.com/photo-1551288049-bebda4e38f71?w=800&h=600&fit=crop&q=80"
                     alt="Task preview"
                     fill
                     className="object-cover"
@@ -147,13 +147,9 @@ export default function CandidateDemoPage() {
                 </div>
                 <div className="p-6">
                   <div className="flex items-center gap-2 mb-3">
-                    <Image
-                      src="https://images.unsplash.com/photo-1599305445671-ac291c95aaa9?w=100&h=100&fit=crop"
-                      alt="Company"
-                      width={32}
-                      height={32}
-                      className="rounded-full border-2 border-gray-200"
-                    />
+                    <div className="w-8 h-8 rounded-full bg-teal-700 flex items-center justify-center text-white font-bold text-sm border-2 border-gray-200">
+                      AL
+                    </div>
                     <span className="text-sm font-bold text-black">Atlas Labs</span>
                   </div>
                   <h4 className="text-xl font-bold text-black mb-3">
@@ -528,16 +524,12 @@ export default function CandidateDemoPage() {
           className="bg-gradient-to-br from-teal-700 to-teal-900 text-white rounded-3xl p-12 text-center"
         >
           <div className="flex items-center justify-center gap-4 mb-6">
-            <Image
-              src="https://i.pravatar.cc/150?u=sarah"
-              alt="Sarah Chen"
-              width={80}
-              height={80}
-              className="rounded-full border-4 border-white"
-            />
+            <div className="w-20 h-20 rounded-full bg-gradient-to-br from-teal-600 to-teal-800 flex items-center justify-center text-white font-black text-3xl border-4 border-white">
+              SC
+            </div>
           </div>
           <h2 className="text-4xl font-black mb-4">Sarah's Jumpstart Journey</h2>
-          <p className="text-xl text-gray-200 mb-8 max-w-2xl mx-auto">
+          <p className="text-xl text-white mb-8 max-w-2xl mx-auto">
             "I was sending 50 résumés a day and getting nowhere. With Jumpstart, I completed 4 tasks, earned $4,200, and got hired by Atlas Labs in 14 days. No interviews. Just work."
           </p>
 

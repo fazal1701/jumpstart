@@ -43,7 +43,7 @@ const engineeringTasks = [
     duration: "15-20 hours",
     difficulty: "Senior",
     skills: ["Next.js", "React", "PostgreSQL", "Prisma"],
-    image: "https://images.unsplash.com/photo-1486312338219-ce68d2c6f44d?w=1200&h=800&fit=crop&q=80",
+    image: "https://images.unsplash.com/photo-1454165804606-c3d57bc86b40?w=1200&h=800&fit=crop&q=80",
     submissions: 12,
   },
   {
@@ -67,7 +67,7 @@ const engineeringTasks = [
     duration: "12-15 hours",
     difficulty: "Senior",
     skills: ["Python", "Pandas", "Apache Airflow", "SQL"],
-    image: "https://images.unsplash.com/photo-1518186285589-2f7649de83e0?w=1200&h=800&fit=crop&q=80",
+    image: "https://images.unsplash.com/photo-1551288049-bebda4e38f71?w=1200&h=800&fit=crop&q=80",
     submissions: 9,
   },
   {

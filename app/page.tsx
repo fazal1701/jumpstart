@@ -8,14 +8,17 @@ import { ArrowRight, Sparkles, Play, Zap } from "lucide-react"
 
 import { Navigation } from "@/components/navigation"
 import { Footer } from "@/components/footer"
+import { SectionWhoFor } from "@/components/section-who-for"
 import { SectionProblem } from "@/components/section-problem"
 import { SectionComparison } from "@/components/section-comparison"
 import { SectionSteps } from "@/components/section-steps"
+import { SectionWhatRealWork } from "@/components/section-what-real-work"
 import { SectionInnovation } from "@/components/section-innovation"
 import { SectionShowcase } from "@/components/section-showcase"
 import { SectionTestimonials } from "@/components/section-testimonials"
+import { SectionWhyNow } from "@/components/section-why-now"
 import { SectionMVP } from "@/components/section-mvp"
-import { SOCIAL_PROOF, PARTNER_BRANDS } from "@/lib/constants"
+import { SOCIAL_PROOF, PARTNER_BRANDS, SITE_TAGLINE, SITE_DESCRIPTION } from "@/lib/constants"
 
 /** Animated counter component for stats */
 function StatBlock({ value, label }: { value: string; label: string }) {
@@ -78,8 +81,8 @@ export default function LandingPage() {
                   transition={{ duration: 0.6, delay: 0.1 }}
                   className="text-5xl sm:text-6xl lg:text-[5.5rem] font-black tracking-tight leading-[0.95]"
                 >
-                  Stop Applying.{" "}
-                  <span className="text-gradient">Start Executing.</span>
+                  Replace Résumés with{" "}
+                  <span className="text-gradient">Real Work</span>
                 </motion.h1>
 
                 {/* Sub-headline */}
@@ -89,8 +92,7 @@ export default function LandingPage() {
                   transition={{ duration: 0.6, delay: 0.2 }}
                   className="text-lg sm:text-xl text-muted-foreground max-w-lg leading-relaxed"
                 >
-                  Jumpstart replaces the black hole of job applications with real, paid tasks.
-                  Build a verified portfolio that speaks louder than your résumé.
+                  {SITE_DESCRIPTION}
                 </motion.p>
 
                 {/* CTAs */}
@@ -223,14 +225,37 @@ export default function LandingPage() {
         </div>
 
         {/* ═══════════════════════════════════════════
-            NARRATIVE SECTIONS
+            NARRATIVE SECTIONS (VC-Ready Order)
             ═══════════════════════════════════════════ */}
+        
+        {/* 1. WHO THIS IS FOR — Critical positioning section */}
+        <SectionWhoFor />
+
+        {/* 2. PROBLEM — Why traditional hiring is broken */}
         <SectionProblem />
-        <SectionComparison />
+
+        {/* 3. HOW IT WORKS — 4-step process */}
         <SectionSteps />
+
+        {/* 4. WHAT REAL WORK LOOKS LIKE — Show, don't tell */}
+        <SectionWhatRealWork />
+
+        {/* 5. COMPARISON — Jumpstart vs Traditional */}
+        <SectionComparison />
+
+        {/* 6. INNOVATION — Work becomes credential */}
         <SectionInnovation />
+
+        {/* 7. SHOWCASE — Portfolio examples */}
         <SectionShowcase />
+
+        {/* 8. TESTIMONIALS — Social proof */}
         <SectionTestimonials />
+
+        {/* 9. WHY NOW — AI era positioning */}
+        <SectionWhyNow />
+
+        {/* 10. MVP VALIDATION — Metrics that matter */}
         <SectionMVP />
 
         {/* ═══════════════════════════════════════════

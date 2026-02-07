@@ -3,110 +3,45 @@
 
 @custom-variant dark (&:is(.dark *));
 
-/* ═══════════════════════════════════════════════
-   JUMPSTART — DESIGN SYSTEM
-   Inspired by Framer's marketplace aesthetic:
-   vibrant gradients, generous whitespace,
-   glassmorphism, and bold typography.
-   ═══════════════════════════════════════════════ */
-
 :root {
-  /* ── Core Palette ─────────────────────────── */
-  --background: oklch(0.99 0.002 90);
-  --foreground: oklch(0.13 0.03 260);
-
-  --card: oklch(1 0 0);
-  --card-foreground: oklch(0.13 0.03 260);
-
-  --popover: oklch(1 0 0);
-  --popover-foreground: oklch(0.13 0.03 260);
-
-  /* Vibrant indigo — the signature Jumpstart color */
-  --primary: oklch(0.55 0.24 264);
-  --primary-foreground: oklch(0.99 0 0);
-
-  --secondary: oklch(0.96 0.008 260);
-  --secondary-foreground: oklch(0.25 0.03 260);
-
-  --muted: oklch(0.965 0.005 260);
-  --muted-foreground: oklch(0.48 0.03 260);
-
-  /* Warm coral accent for CTAs and highlights */
-  --accent: oklch(0.68 0.19 30);
-  --accent-foreground: oklch(0.99 0 0);
-
-  --destructive: oklch(0.58 0.22 27);
-  --destructive-foreground: oklch(0.99 0 0);
-
-  --border: oklch(0.93 0.004 260);
-  --input: oklch(0.93 0.004 260);
-  --ring: oklch(0.55 0.24 264);
-
-  /* Charts */
-  --chart-1: oklch(0.55 0.24 264);
-  --chart-2: oklch(0.65 0.18 165);
-  --chart-3: oklch(0.72 0.16 40);
-  --chart-4: oklch(0.60 0.22 300);
-  --chart-5: oklch(0.78 0.15 80);
-
-  --radius: 0.75rem;
-
-  /* Sidebar */
-  --sidebar: oklch(0.985 0 0);
-  --sidebar-foreground: oklch(0.13 0 0);
-  --sidebar-primary: oklch(0.55 0.24 264);
-  --sidebar-primary-foreground: oklch(0.985 0 0);
-  --sidebar-accent: oklch(0.96 0 0);
-  --sidebar-accent-foreground: oklch(0.13 0 0);
-  --sidebar-border: oklch(0.93 0 0);
-  --sidebar-ring: oklch(0.55 0.24 264);
-
-  /* Semantic */
-  --success: oklch(0.60 0.18 155);
-  --success-foreground: oklch(1 0 0);
-  --warning: oklch(0.80 0.15 85);
-  --warning-foreground: oklch(0.13 0 0);
+  /* WHITE BACKGROUND + BLACK TEXT (High Contrast) */
+  --background: #ffffff;
+  --foreground: #000000;
+  
+  --card: #ffffff;
+  --card-foreground: #000000;
+  
+  --popover: #ffffff;
+  --popover-foreground: #000000;
+  
+  /* Teal 700 - Primary Brand Color */
+  --primary: #0f766e;
+  --primary-foreground: #ffffff;
+  
+  --secondary: #f3f4f6;
+  --secondary-foreground: #000000;
+  
+  --muted: #f9fafb;
+  --muted-foreground: #000000;
+  
+  /* Amber Accent */
+  --accent: #f59e0b;
+  --accent-foreground: #000000;
+  
+  --destructive: #ef4444;
+  --destructive-foreground: #ffffff;
+  
+  --border: #e5e7eb;
+  --input: #e5e7eb;
+  --ring: #0f766e;
+  
+  --radius: 1rem;
 }
 
-.dark {
-  --background: oklch(0.12 0.02 260);
-  --foreground: oklch(0.96 0.005 260);
-  --card: oklch(0.15 0.02 260);
-  --card-foreground: oklch(0.96 0.005 260);
-  --popover: oklch(0.15 0.02 260);
-  --popover-foreground: oklch(0.96 0.005 260);
-  --primary: oklch(0.70 0.20 264);
-  --primary-foreground: oklch(0.12 0 0);
-  --secondary: oklch(0.22 0.02 260);
-  --secondary-foreground: oklch(0.96 0 0);
-  --muted: oklch(0.22 0.02 260);
-  --muted-foreground: oklch(0.65 0.03 260);
-  --accent: oklch(0.22 0.02 260);
-  --accent-foreground: oklch(0.96 0 0);
-  --destructive: oklch(0.45 0.18 25);
-  --destructive-foreground: oklch(0.65 0.22 25);
-  --border: oklch(0.22 0.02 260);
-  --input: oklch(0.22 0.02 260);
-  --ring: oklch(0.55 0.24 264);
-  --chart-1: oklch(0.55 0.24 264);
-  --chart-2: oklch(0.70 0.17 162);
-  --chart-3: oklch(0.78 0.19 70);
-  --chart-4: oklch(0.63 0.27 304);
-  --chart-5: oklch(0.65 0.25 16);
-  --sidebar: oklch(0.15 0.02 260);
-  --sidebar-foreground: oklch(0.96 0 0);
-  --sidebar-primary: oklch(0.70 0.20 264);
-  --sidebar-primary-foreground: oklch(0.96 0 0);
-  --sidebar-accent: oklch(0.22 0.02 260);
-  --sidebar-accent-foreground: oklch(0.96 0 0);
-  --sidebar-border: oklch(0.22 0.02 260);
-  --sidebar-ring: oklch(0.55 0.24 264);
-}
-
-/* ── Theme Mapping ────────────────────────── */
 @theme inline {
-  --font-sans: 'Geist', 'Geist Fallback', system-ui, sans-serif;
-  --font-mono: 'Geist Mono', 'Geist Mono Fallback', ui-monospace, monospace;
+  --font-sans: 'Geist', 'Geist Fallback';
+  --font-mono: 'Geist Mono', 'Geist Mono Fallback';
+  
   --color-background: var(--background);
   --color-foreground: var(--foreground);
   --color-card: var(--card);
@@ -126,155 +61,72 @@
   --color-border: var(--border);
   --color-input: var(--input);
   --color-ring: var(--ring);
-  --color-chart-1: var(--chart-1);
-  --color-chart-2: var(--chart-2);
-  --color-chart-3: var(--chart-3);
-  --color-chart-4: var(--chart-4);
-  --color-chart-5: var(--chart-5);
+  
   --radius-sm: calc(var(--radius) - 4px);
   --radius-md: calc(var(--radius) - 2px);
   --radius-lg: var(--radius);
   --radius-xl: calc(var(--radius) + 4px);
-  --color-sidebar: var(--sidebar);
-  --color-sidebar-foreground: var(--sidebar-foreground);
-  --color-sidebar-primary: var(--sidebar-primary);
-  --color-sidebar-primary-foreground: var(--sidebar-primary-foreground);
-  --color-sidebar-accent: var(--sidebar-accent);
-  --color-sidebar-accent-foreground: var(--sidebar-accent-foreground);
-  --color-sidebar-border: var(--sidebar-border);
-  --color-sidebar-ring: var(--sidebar-ring);
 }
 
-/* ── Base Styles ──────────────────────────── */
 @layer base {
   * {
-    @apply border-border outline-ring/50;
+    @apply border-border;
   }
 
   body {
-    @apply bg-background text-foreground antialiased;
-    font-feature-settings: "ss01", "ss02", "cv01", "cv02";
+    @apply bg-white text-black;
+    font-feature-settings: "rlig" 1, "calt" 1;
   }
 
   h1, h2, h3, h4, h5, h6 {
-    @apply tracking-tight font-bold;
+    @apply text-black font-bold;
   }
 
-  ::selection {
-    @apply bg-primary/20 text-primary;
+  p {
+    @apply text-black;
+  }
+
+  a {
+    @apply text-teal-700 hover:text-teal-800;
   }
 }
 
-/* ── Custom Utility Classes ───────────────── */
 @layer utilities {
-  .text-balance {
-    text-wrap: balance;
-  }
-
-  /* Gradient text — signature Jumpstart style */
   .text-gradient {
-    @apply bg-clip-text text-transparent;
-    background-image: linear-gradient(135deg, oklch(0.55 0.24 264), oklch(0.60 0.22 300), oklch(0.68 0.19 30));
-  }
-
-  /* Glassmorphism card */
-  .glass {
-    @apply bg-white/60 backdrop-blur-2xl border border-white/20;
-    box-shadow:
-      0 0 0 1px rgba(255, 255, 255, 0.1),
-      0 8px 40px rgba(0, 0, 0, 0.04),
-      0 2px 8px rgba(0, 0, 0, 0.02);
-  }
-
-  /* Premium card with gradient border */
-  .card-premium {
-    @apply relative rounded-3xl overflow-hidden;
-    background: linear-gradient(135deg, oklch(0.55 0.24 264 / 0.1), oklch(0.60 0.22 300 / 0.05));
-  }
-
-  .card-premium::before {
-    content: '';
-    position: absolute;
-    inset: 0;
-    padding: 1px;
-    border-radius: inherit;
-    background: linear-gradient(135deg, oklch(0.55 0.24 264 / 0.3), oklch(0.60 0.22 300 / 0.1), transparent);
-    mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
-    mask-composite: exclude;
-    -webkit-mask-composite: xor;
-    pointer-events: none;
-  }
-
-  /* Noise/grain texture overlay */
-  .bg-grain::after {
-    content: '';
-    position: absolute;
-    inset: 0;
-    background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noise'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noise)' opacity='0.03'/%3E%3C/svg%3E");
-    pointer-events: none;
-    z-index: 1;
-  }
-
-  /* Dot grid pattern */
-  .bg-dots {
-    background-image: radial-gradient(oklch(0.55 0.24 264 / 0.08) 1px, transparent 1px);
-    background-size: 24px 24px;
-  }
-
-  /* Mesh gradient backgrounds */
-  .bg-mesh-1 {
-    background:
-      radial-gradient(ellipse at 20% 50%, oklch(0.55 0.24 264 / 0.08) 0%, transparent 50%),
-      radial-gradient(ellipse at 80% 20%, oklch(0.60 0.22 300 / 0.06) 0%, transparent 50%),
-      radial-gradient(ellipse at 60% 80%, oklch(0.68 0.19 30 / 0.04) 0%, transparent 50%);
-  }
-
-  .bg-mesh-2 {
-    background:
-      radial-gradient(ellipse at 10% 90%, oklch(0.55 0.24 264 / 0.06) 0%, transparent 40%),
-      radial-gradient(ellipse at 90% 10%, oklch(0.68 0.19 30 / 0.05) 0%, transparent 40%);
+    @apply bg-clip-text text-transparent bg-gradient-to-r from-teal-700 to-teal-600;
   }
 }
 
-/* ── Animations ───────────────────────────── */
+/* Custom Animations */
 @keyframes marquee {
-  0% { transform: translateX(0); }
-  100% { transform: translateX(-50%); }
-}
-
-@keyframes marquee-reverse {
-  0% { transform: translateX(-50%); }
-  100% { transform: translateX(0); }
-}
-
-@keyframes float {
-  0%, 100% { transform: translateY(0px); }
-  50% { transform: translateY(-20px); }
-}
-
-@keyframes pulse-glow {
-  0%, 100% { box-shadow: 0 0 20px oklch(0.55 0.24 264 / 0.2); }
-  50% { box-shadow: 0 0 40px oklch(0.55 0.24 264 / 0.4); }
+  0% {
+    transform: translateX(0);
+  }
+  100% {
+    transform: translateX(-100%);
+  }
 }
 
 .animate-marquee {
   animation: marquee 30s linear infinite;
 }
 
-.animate-marquee-reverse {
-  animation: marquee-reverse 30s linear infinite;
+/* Mesh Gradient Backgrounds */
+.bg-mesh-1 {
+  background-image: 
+    radial-gradient(at 0% 0%, rgba(14, 116, 110, 0.08) 0px, transparent 50%),
+    radial-gradient(at 100% 0%, rgba(245, 158, 11, 0.05) 0px, transparent 50%),
+    radial-gradient(at 100% 100%, rgba(14, 116, 110, 0.06) 0px, transparent 50%),
+    radial-gradient(at 0% 100%, rgba(245, 158, 11, 0.04) 0px, transparent 50%);
 }
 
-.animate-float {
-  animation: float 6s ease-in-out infinite;
+/* Dot Grid Pattern */
+.bg-dots {
+  background-image: radial-gradient(rgba(0, 0, 0, 0.1) 1px, transparent 1px);
+  background-size: 20px 20px;
 }
 
-.animate-pulse-glow {
-  animation: pulse-glow 3s ease-in-out infinite;
-}
-
-/* Pause marquee on hover for accessibility */
-.group:hover .animate-marquee,
-.group:hover .animate-marquee-reverse {
-  animation-play-state: paused;
+/* Grain Texture */
+.bg-grain {
+  background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 400 400' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noiseFilter'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noiseFilter)' opacity='0.03'/%3E%3C/svg%3E");
 }

@@ -8,6 +8,7 @@ import { SectionProblem } from "@/components/section-problem"
 import { SectionComparison } from "@/components/section-comparison"
 import { SectionInnovation } from "@/components/section-innovation"
 import { SectionSteps } from "@/components/section-steps"
+import { SectionTestimonials } from "@/components/section-testimonials"
 import { SectionMVP } from "@/components/section-mvp"
 import { SectionShowcase } from "@/components/section-showcase"
 import { JobAnalyzer } from "@/components/job-analyzer"
@@ -271,6 +272,7 @@ export default function LandingPage() {
 
         <SectionInnovation />
         <SectionShowcase />
+        <SectionTestimonials />
         <SectionMVP />
 
         {/* Final CTA - Wizeprep Style */}

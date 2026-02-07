@@ -2,6 +2,7 @@
 
 import { motion } from "framer-motion"
 import { Search, Rocket, Trophy, Briefcase } from "lucide-react"
+import Image from "next/image"
 
 const steps = [
   {
@@ -84,10 +85,11 @@ export function SectionSteps() {
                     transition={{ duration: 0.8 }}
                     className="flex-1 relative aspect-video lg:aspect-square w-full rounded-[3rem] overflow-hidden shadow-2xl border-8 border-muted"
                   >
-                    <img
+                    <Image
                       src={step.image}
                       alt={step.title}
-                      className="object-cover w-full h-full hover:scale-105 transition-transform duration-700"
+                      fill
+                      className="object-cover hover:scale-105 transition-transform duration-700"
                     />
                     <div className="absolute inset-0 bg-gradient-to-t from-black/40 to-transparent" />
                   </motion.div>

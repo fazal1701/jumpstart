@@ -37,7 +37,7 @@ export function JobAnalyzer() {
                         AI Job Analysis
                     </h2>
                     <p className="max-w-[700px] text-muted-foreground md:text-xl/relaxed">
-                        Paste a job description and let SkillForge extract the real requirements.
+                        Paste a job description and let Jumpstart extract the real requirements.
                     </p>
                 </div>
 

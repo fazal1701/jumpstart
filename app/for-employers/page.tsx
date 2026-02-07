@@ -51,7 +51,7 @@ export default function ForEmployersPage() {
                     viewport={{ once: true }}
                     transition={{ duration: 0.8 }}
                 >
-                    <h2 className="text-3xl font-bold mb-6">Why SkillForge?</h2>
+                    <h2 className="text-3xl font-bold mb-6">Why Jumpstart?</h2>
                     <ul className="space-y-6">
                         {[
                             { title: "Verify skills before the interview", desc: "See actual code submissions for your specific stack." },
@@ -86,7 +86,7 @@ export default function ForEmployersPage() {
                                 <div className="h-3 w-3 rounded-full bg-red-400" />
                                 <div className="h-3 w-3 rounded-full bg-yellow-400" />
                                 <div className="h-3 w-3 rounded-full bg-green-400" />
-                                <span className="ml-2 text-xs font-mono text-muted-foreground">employer-dashboard.skillforge.ai</span>
+                                <span className="ml-2 text-xs font-mono text-muted-foreground">employer-dashboard.jumpstart.ai</span>
                             </div>
                         </CardHeader>
                         <CardContent className="p-0">

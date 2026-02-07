@@ -8,8 +8,8 @@ const _geist = Geist({ subsets: ["latin"] });
 const _geistMono = Geist_Mono({ subsets: ["latin"] });
 
 export const metadata: Metadata = {
-  title: 'SkillForge - The New Standard of Early-Career Hiring',
-  description: 'SkillForge is a work-first hiring platform where companies post real paid tasks and Gen Z talent proves their capabilities through verified work.',
+  title: 'Jumpstart - The New Standard of Early-Career Hiring',
+  description: 'Jumpstart is a work-first hiring platform where companies post real paid tasks and Gen Z talent proves their capabilities through verified work.',
   generator: 'v0.app',
   icons: {
     icon: [

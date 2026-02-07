@@ -5,6 +5,7 @@ import { Card, CardContent, CardFooter, CardHeader, CardTitle } from "@/componen
 import { Badge } from "@/components/ui/badge"
 import { MOCK_PORTFOLIO_ITEMS } from "@/lib/mock-data"
 import { motion } from "framer-motion"
+import { Play, Image as ImageIcon } from "lucide-react"
 
 export function SectionShowcase() {
     return (
@@ -20,7 +21,7 @@ export function SectionShowcase() {
                         Real Work. Verified Skills.
                     </h2>
                     <p className="max-w-[900px] text-muted-foreground md:text-xl/relaxed lg:text-base/relaxed xl:text-xl/relaxed text-balance">
-                        See what candidates are building on SkillForge.
+                        See what candidates are building on Jumpstart. From technical deep dives to design walkthroughs.
                     </p>
                 </motion.div>
                 <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
@@ -41,6 +42,26 @@ export function SectionShowcase() {
                                         className="object-cover transition-transform duration-500 group-hover:scale-105"
                                     />
                                     <div className="absolute inset-0 bg-black/10 group-hover:bg-transparent transition-colors duration-300" />
+                                    
+                                    {/* Type Badge */}
+                                    <div className="absolute top-3 left-3">
+                                        <Badge variant="secondary" className="bg-background/80 backdrop-blur-sm gap-1 text-[10px]">
+                                            {item.type === 'VIDEO' ? (
+                                                <><Play className="h-3 w-3 fill-current" /> Video</>
+                                            ) : (
+                                                <><ImageIcon className="h-3 w-3" /> Image</>
+                                            )}
+                                        </Badge>
+                                    </div>
+
+                                    {/* Video Play Overlay */}
+                                    {item.type === 'VIDEO' && (
+                                        <div className="absolute inset-0 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+                                            <div className="h-12 w-12 rounded-full bg-primary/90 flex items-center justify-center text-primary-foreground shadow-xl transform scale-90 group-hover:scale-100 transition-transform duration-300">
+                                                <Play className="h-6 w-6 fill-current ml-1" />
+                                            </div>
+                                        </div>
+                                    )}
                                 </div>
                                 <CardHeader className="p-4">
                                     <CardTitle className="line-clamp-1 text-lg group-hover:text-primary transition-colors">{item.title}</CardTitle>

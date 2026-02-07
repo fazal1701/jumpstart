@@ -28,7 +28,7 @@ export function Navigation() {
             <div className="flex h-8 w-8 items-center justify-center rounded-lg bg-foreground">
               <Briefcase className="h-4 w-4 text-background" />
             </div>
-            <span className="text-xl font-semibold tracking-tight">SkillForge</span>
+            <span className="text-xl font-semibold tracking-tight">Jumpstart</span>
           </Link>
 
           <div className="hidden md:flex md:gap-6">
@@ -143,7 +143,7 @@ export function DashboardNavigation({ userType }: { userType: "candidate" | "emp
             <div className="flex h-8 w-8 items-center justify-center rounded-lg bg-foreground">
               <Briefcase className="h-4 w-4 text-background" />
             </div>
-            <span className="text-xl font-semibold tracking-tight">SkillForge</span>
+            <span className="text-xl font-semibold tracking-tight">Jumpstart</span>
           </Link>
 
           <div className="hidden md:flex md:gap-1">

@@ -4,7 +4,7 @@ import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card"
 import { Button } from "@/components/ui/button"
 import { Badge } from "@/components/ui/badge"
 import { Progress } from "@/components/ui/progress"
-import { 
+import {
   ArrowLeft,
   Building2,
   Calendar,
@@ -34,33 +34,33 @@ const submission = {
   earnings: "$500",
   ranking: "1 of 24",
   breakdown: [
-    { 
-      name: "Strategic Thinking", 
-      score: 96, 
+    {
+      name: "Strategic Thinking",
+      score: 96,
       weight: "30%",
       feedback: "Excellent understanding of B2B SaaS dynamics. Strategy aligns well with business objectives and shows clear path to measurable outcomes."
     },
-    { 
-      name: "Creativity & Originality", 
-      score: 92, 
+    {
+      name: "Creativity & Originality",
+      score: 92,
       weight: "25%",
       feedback: "Innovative content pillars with unique angles. Good differentiation from competitor approaches."
     },
-    { 
-      name: "Practical Feasibility", 
-      score: 94, 
+    {
+      name: "Practical Feasibility",
+      score: 94,
       weight: "20%",
       feedback: "Realistic timeline and resource requirements. Budget allocation is appropriate for proposed activities."
     },
-    { 
-      name: "Presentation Quality", 
-      score: 93, 
+    {
+      name: "Presentation Quality",
+      score: 93,
       weight: "15%",
       feedback: "Well-structured document with clear sections. Visual aids enhance understanding."
     },
-    { 
-      name: "Data-Driven Approach", 
-      score: 95, 
+    {
+      name: "Data-Driven Approach",
+      score: 95,
       weight: "10%",
       feedback: "Strong KPI framework with relevant metrics. Good use of industry benchmarks."
     },
@@ -134,12 +134,12 @@ export default function SubmissionResultPage() {
   return (
     <div className="min-h-screen bg-background">
       <DashboardNavigation userType="candidate" />
-      
+
       <main className="mx-auto max-w-7xl px-4 py-8 sm:px-6 lg:px-8">
         {/* Header */}
         <div className="mb-6">
-          <Link 
-            href="/dashboard" 
+          <Link
+            href="/dashboard"
             className="inline-flex items-center gap-2 text-sm text-muted-foreground hover:text-foreground"
           >
             <ArrowLeft className="h-4 w-4" />
@@ -351,7 +351,7 @@ export default function SubmissionResultPage() {
                 <Award className="mx-auto h-8 w-8 text-accent" />
                 <p className="mt-2 font-medium">Added to Portfolio</p>
                 <p className="mt-1 text-sm text-muted-foreground">
-                  This verified work is now part of your SkillForge portfolio
+                  This verified work is now part of your Jumpstart portfolio
                 </p>
               </CardContent>
             </Card>

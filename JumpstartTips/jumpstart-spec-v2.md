@@ -1,30 +1,58 @@
-# SkillForge — Complete Frontend Product & Engineering Spec
+# Jumpstart — Complete Frontend Product & Engineering Spec
 
 **Version 1.1** | Build date: Jan 17, 2026 | Status: MVP-Ready | Focus: Frontend + Mock Data Depth
 
 ---
 
-## EXECUTIVE SUMMARY: SkillForge Positioning
+## EXECUTIVE SUMMARY: Jumpstart Positioning
 
-### What SkillForge Is (NOT What It Isn't)
+### 1. The Operational Gap (Why We Exist)
+Existing education models fail to produce job-ready talent because they optimize for the wrong metrics.
 
-| Aspect | What We're NOT | What We ARE |
-|--------|----------------|------------|
-| **Core Model** | Course library (Coursera, Udemy) | Work-first hiring OS |
-| **Proof** | Certificates, badges, completions | Verified capability from real work |
-| **User Journey** | Learn → Quiz → Pass → Resume | Work → Score → Badge → Offer |
-| **Outcome** | "I finished a course" | "I got hired because of proven skills" |
-| **Differentiation** | Passive content consumption | Active, paid, evaluated work |
-| **Data Moat** | Course completion metrics | Performance on real tasks → career outcomes |
+#### 🎓 Traditional Education
+*   **Optimizes for:** Credentials, Theory
+*   **Outcome:** A PDF resume & GPA
+*   **Failure:** Signals potential, not execution ability.
 
-### Why SkillForge Wins
+#### 📚 Coursera / Udemy
+*   **Optimizes for:** Content consumption, Certificates
+*   **Outcome:** "Completed course" badge
+*   **Failure:** Learning ≠ Doing.
 
-| Competitor | Their Strength | SkillForge Edge |
-|------------|---|---|
-| **Alpha School** (AI tutoring) | Personalized AI learning | + **Paid real work** + **Verified outcomes** + **Employer hiring** |
-| **myBlueprint** (Career planning) | Career identity + pathways | + **Paid work to get there** + **Proof of capability** + **Direct hiring** |
-| **Wizeprep** (Outcome focus) | Guaranteed grade lifts | + **Real job outcomes** + **Verified skills** + **Marketplace scale** |
-| **LinkedIn Learning** (Skills graph) | Skills taxonomy | + **Real work evaluation** + **Verified badges** + **Direct hiring pipeline** |
+#### 💸 "Hustler" Platforms
+*   **Optimizes for:** Motivation, Hype
+*   **Outcome:** Surface-level playbooks
+*   **Failure:** No employer trust or pipeline.
+
+---
+
+### 2. The Jumpstart Solution (Work-First OS)
+**We replace resumes with proof of execution.**
+
+#### Core Product Pillars
+1.  **Job Simulation Engine:** Learn ONLY what the job needs (exact tools, messy data, real constraints).
+2.  **Contractor Operant Conditioning:** Users act as Independent Contractors, not students.
+3.  **Impact Verification:** Success = Saved money, Made money, or Shipped features.
+4.  **Execution Ledger:** A version-controlled history of work that replaces the resume.
+5.  **Cross-Niche Validation:** Proving adaptability across multiple industries.
+
+---
+
+### 3. UX & CONTENT STRATEGY (The "Depth" Requirement)
+To achieve the "Work-First" feel, our interface must be immersive and evidence-rich.
+
+#### 🖼️ Visual Depth Strategy
+*   **"Images of the Internet":** Use high-fidelity, relevant imagery. No generic stock photos.
+*   **Contextual Mock Videos:** Every task and feature must have a "Walkthrough" or "Demo" video to simulate the real environment.
+*   **Rich Media Embeds:**
+    *   Task briefs include video briefings from "Hiring Managers" (simulated).
+    *   Documentation pages use GIF workflows, not just text.
+    *   Profiles feature "Showcase Reels" of completed work.
+
+#### 📹 Mock Video Requirements
+*   **Task Intros:** 30-60s video setting the stage ("Here's the broken dashboard, fix it").
+*   **Solution Demos:** 1-2m video showing the expected outcome.
+*   **Culture Peeks:** Short clips simulating the company environment for each task.
 
 ---
 
@@ -203,7 +231,7 @@ interface SocialLinks {
 
 ```ts
 /**
- * CandidateProfile - Everything about a candidate on SkillForge
+ * CandidateProfile - Everything about a candidate on Jumpstart
  * 
  * This is the most complex profile type as it tracks:
  * - Current skills and verification status
@@ -270,7 +298,7 @@ interface CandidateProfile {
   
   /**
    * Portfolio - public showcase of candidate's best work
-   * Can be linked to SkillForge tasks or external projects
+   * Can be linked to Jumpstart tasks or external projects
    */
   portfolio: PortfolioItem[];
   
@@ -327,7 +355,7 @@ interface VerifiedSkill {
    */
   level: SkillLevel;              // JUNIOR | MID | SENIOR
   
-  verified: boolean;              // true = came through SkillForge eval
+  verified: boolean;              // true = came through Jumpstart eval
   verifiedAt?: ISODateString;     // When it was verified
   
   /**
@@ -364,7 +392,7 @@ interface Badge {
   
   level?: SkillLevel;            // What level is this badge
   issuedAt: ISODateString;
-  issuedBy: string;               // "SkillForge AI" or company name
+  issuedBy: string;               // "Jumpstart AI" or company name
   expiresAt?: ISODateString;      // Optional expiration
   
   // Rarity affects display/prestige
@@ -375,7 +403,7 @@ interface Badge {
   linkedTaskId?: UUID;
   
   // Social sharing
-  shareableUrl?: string;          // Link to badge on SkillForge
+  shareableUrl?: string;          // Link to badge on Jumpstart
   linkedinShareUrl?: string;      // Pre-filled LinkedIn share intent
 }
 
@@ -383,7 +411,7 @@ interface Badge {
  * PortfolioItem - showcase of candidate's work
  * 
  * Can be:
- * - Linked to SkillForge task submission (automatic)
+ * - Linked to Jumpstart task submission (automatic)
  * - Self-created portfolio entry (manual)
  * - External project (GitHub repo, live site, etc.)
  */
@@ -403,8 +431,8 @@ interface PortfolioItem {
   repoUrl?: string;               // GitHub link
   liveUrl?: string;               // Live deployment
   
-  // SkillForge integration
-  linkedTaskId?: UUID;            // If created from a SkillForge task
+  // Jumpstart integration
+  linkedTaskId?: UUID;            // If created from a Jumpstart task
   linkedSubmissionId?: UUID;      // If created from submission
   
   createdAt: ISODateString;
@@ -416,11 +444,11 @@ interface PortfolioItem {
 
 ```ts
 /**
- * CompanyProfile - Everything about a company on SkillForge
+ * CompanyProfile - Everything about a company on Jumpstart
  * 
  * Tracks:
  * - Company identity and branding
- * - Track record on SkillForge (hires, spend, ratings)
+ * - Track record on Jumpstart (hires, spend, ratings)
  * - Posted tasks and submissions
  * - Hiring preferences and volume
  */
@@ -444,7 +472,7 @@ interface CompanyProfile {
   // ========== TRACK RECORD & METRICS ==========
   
   /**
-   * Success on SkillForge shows companies are good to work with
+   * Success on Jumpstart shows companies are good to work with
    * These metrics affect:
    * - Visibility in "trusted companies" listing
    * - Candidate willingness to apply
@@ -452,7 +480,7 @@ interface CompanyProfile {
    */
   hiresCount: number;             // Total successful hires
   totalTasksPosted: number;       // Total tasks ever posted
-  totalSpend: number;             // USD spent on SkillForge
+  totalSpend: number;             // USD spent on Jumpstart
   
   avgReviewTime: number;          // days (1.2 = 1.2 days)
   averageRating?: number;         // How candidates rate working with them (1-5)
@@ -485,7 +513,7 @@ interface CompanyProfile {
 
 ```ts
 /**
- * Task - The core unit of work in SkillForge
+ * Task - The core unit of work in Jumpstart
  * 
  * A task is:
  * - Posted by a company
@@ -499,7 +527,7 @@ interface CompanyProfile {
  * 3. Candidates submit work
  * 4. Company reviews submissions (UNDER_REVIEW)
  * 5. Company accepts/rejects (ACCEPTED or REJECTED)
- * 6. SkillForge AI issues certification + badge
+ * 6. Jumpstart AI issues certification + badge
  * 7. Task moves to COMPLETED when all grading done
  */
 interface Task {
@@ -744,11 +772,11 @@ interface CertificationResult {
   
   issuedBadge?: Badge;
   issuedAt: ISODateString;
-  issuer: string;                 // "SkillForge AI"
+  issuer: string;                 // "Jumpstart AI"
   
   // ========== SHAREABLE PROOF ==========
   
-  certificateUrl?: string;        // Download PDF: skillforge.com/cert/abc123
+  certificateUrl?: string;        // Download PDF: jumpstart.ai/cert/abc123
   linkedinShareUrl?: string;      // Pre-filled: "I just earned React Certified badge"
 }
 
@@ -1015,7 +1043,7 @@ const mockPortfolioImages = {
 /**
  * PERSONA 1: JORDAN LEE
  * Status: Early-stage active candidate
- * Profile: Bootcamp graduate, learning on SkillForge
+ * Profile: Bootcamp graduate, learning on Jumpstart
  * Completed: 7 tasks | Earnings: $2,350 | Rating: 4.8★ (12 reviews)
  * 
  * Motivation: Building portfolio to land first dev role
@@ -1039,7 +1067,7 @@ const mockCandidateJordan: User = {
     careerTrack: 'SOFTWARE_ENGINEERING',
     skillsLookingFor: ['System Design', 'Go', 'Advanced React'],
     
-    // Skills - Verified through SkillForge tasks
+    // Skills - Verified through Jumpstart tasks
     skills: [
       {
         id: 'skill_jordan_react',
@@ -1054,7 +1082,7 @@ const mockCandidateJordan: User = {
           icon: mockBadgeIcons.reactMidBadge,
           level: 'MID',
           issuedAt: '2026-01-15T09:30:00.000Z',
-          issuedBy: 'SkillForge AI',
+          issuedBy: 'Jumpstart AI',
           rarity: 'UNCOMMON',
         },
         proofCount: 5,
@@ -1083,7 +1111,7 @@ const mockCandidateJordan: User = {
         description: 'Ranked in top 5% of candidates',
         icon: mockBadgeIcons.reactMidBadge,
         issuedAt: '2026-01-17T00:00:00.000Z',
-        issuedBy: 'SkillForge',
+        issuedBy: 'Jumpstart',
         rarity: 'RARE',
       },
     ],
@@ -1132,7 +1160,7 @@ const mockCandidateJordan: User = {
  * Profile: CS grad with startup experience, shipping features daily
  * Completed: 12 tasks | Earnings: $4,800 | Rating: 4.9★ (23 reviews)
  * 
- * Motivation: Leverage SkillForge for senior role interviews
+ * Motivation: Leverage Jumpstart for senior role interviews
  * Task preference: Full-stack, 8-12 hours, $600-800 per task
  * Next step: Negotiate equity at next startup
  */
@@ -1183,10 +1211,10 @@ const mockCandidateAlex: User = {
       {
         id: 'badge_alex_elite',
         name: 'Elite Developer',
-        description: 'Top 1% of developers on SkillForge',
+        description: 'Top 1% of developers on Jumpstart',
         icon: mockBadgeIcons.reactMidBadge,
         issuedAt: '2026-01-17T00:00:00.000Z',
-        issuedBy: 'SkillForge',
+        issuedBy: 'Jumpstart',
         rarity: 'RARE',
       },
     ],
@@ -1828,12 +1856,12 @@ const mockSubmissionAlexEcommerce: TaskSubmission = {
       icon: mockBadgeIcons.nextjsSeniorBadge,
       level: 'SENIOR',
       issuedAt: '2026-01-16T09:00:00.000Z',
-      issuedBy: 'SkillForge AI',
+      issuedBy: 'Jumpstart AI',
       rarity: 'RARE',
     },
     issuedAt: '2026-01-16T09:00:00.000Z',
-    issuer: 'SkillForge AI',
-    certificateUrl: 'https://skillforge.com/certificates/alex-chen-nextjs-2026',
+    issuer: 'Jumpstart AI',
+    certificateUrl: 'https://jumpstart.ai/certificates/alex-chen-nextjs-2026',
   },
 };
 ```
@@ -2090,7 +2118,7 @@ interface CandidateDashboardState {
 │ │ ├─ Company Profile (Card)
 │ │ │  [Logo] Atlas Labs
 │ │ │  "Real-time analytics for enterprise..."
-│ │ │  7 hires from SkillForge
+│ │ │  7 hires from Jumpstart
 │ │ │  4.7★ from candidates
 │ │ │  [View Company →]
 │ │ │

@@ -3,7 +3,7 @@ import { DashboardNavigation } from "@/components/navigation"
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card"
 import { Button } from "@/components/ui/button"
 import { Badge } from "@/components/ui/badge"
-import { 
+import {
   ExternalLink,
   Download,
   Share2,
@@ -90,13 +90,13 @@ export default function PortfolioPage() {
   return (
     <div className="min-h-screen bg-background">
       <DashboardNavigation userType="candidate" />
-      
+
       <main className="mx-auto max-w-7xl px-4 py-8 sm:px-6 lg:px-8">
         {/* Header */}
         <div className="flex flex-col gap-4 sm:flex-row sm:items-center sm:justify-between">
           <div>
             <h1 className="text-2xl font-bold tracking-tight">My Portfolio</h1>
-            <p className="text-muted-foreground">Your verified work history on SkillForge</p>
+            <p className="text-muted-foreground">Your verified work history on Jumpstart</p>
           </div>
           <div className="flex gap-2">
             <Button variant="outline" className="gap-2 bg-transparent">

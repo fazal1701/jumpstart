@@ -16,7 +16,7 @@ export default function CandidateDashboard() {
             <header className="bg-background border-b px-6 py-4 flex items-center justify-between sticky top-0 z-10">
                 <div className="flex items-center gap-2">
                     <div className="h-8 w-8 bg-primary rounded-lg flex items-center justify-center font-bold text-primary-foreground">SF</div>
-                    <span className="font-bold text-lg">SkillForge</span>
+                    <span className="font-bold text-lg">Jumpstart</span>
                 </div>
                 <div className="flex items-center gap-4">
                     <span className="text-sm text-muted-foreground">Welcome back, {user.name}</span>

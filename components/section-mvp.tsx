@@ -20,7 +20,7 @@ export function SectionMVP() {
                     >
                         <Image
                             src="/images/mvp-visual.png"
-                            alt="SkillForge MVP Dashboard"
+                            alt="Jumpstart MVP Dashboard"
                             fill
                             className="object-cover transition-transform duration-700 group-hover:scale-105"
                         />
@@ -36,7 +36,7 @@ export function SectionMVP() {
                     >
                         <div className="space-y-2">
                             <h2 className="text-3xl font-bold tracking-tighter sm:text-4xl md:text-5xl">
-                                SkillForge MVP
+                                Jumpstart MVP
                             </h2>
                             <p className="text-muted-foreground text-lg">
                                 Validating work-first hiring as the future of early-career recruiting.

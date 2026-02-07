@@ -37,7 +37,7 @@ export function Footer() {
               <div className="flex h-8 w-8 items-center justify-center rounded-lg bg-foreground">
                 <Briefcase className="h-4 w-4 text-background" />
               </div>
-              <span className="text-xl font-semibold tracking-tight">SkillForge</span>
+              <span className="text-xl font-semibold tracking-tight">Jumpstart</span>
             </Link>
             <p className="mt-4 text-sm text-muted-foreground">
               The new standard of early-career hiring. Prove your skills through real work.
@@ -111,7 +111,7 @@ export function Footer() {
 
         <div className="mt-12 border-t border-border pt-8">
           <p className="text-center text-sm text-muted-foreground">
-            2026 SkillForge. All rights reserved.
+            2026 Jumpstart. All rights reserved.
           </p>
         </div>
       </div>

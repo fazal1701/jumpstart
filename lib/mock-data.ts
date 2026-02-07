@@ -95,6 +95,8 @@ export interface PortfolioItem {
     title: string;
     candidateId: string;
     imageUrl: string;
+    videoUrl?: string;
+    type: 'IMAGE' | 'VIDEO';
     skills: string[];
     description: string;
     verifiedBy: string;
@@ -1050,6 +1052,7 @@ export const MOCK_PORTFOLIO_ITEMS: PortfolioItem[] = [
         title: "E-Commerce Checkout Flow",
         candidateId: "u1",
         imageUrl: "https://images.unsplash.com/photo-1556742049-0cfed4f7a07d?auto=format&fit=crop&q=80&w=800",
+        type: 'IMAGE',
         skills: ["React", "Stripe", "Redux"],
         description: "Implemented a secure, multi-step checkout process with real-time validation.",
         verifiedBy: "TechFlow"
@@ -1059,8 +1062,10 @@ export const MOCK_PORTFOLIO_ITEMS: PortfolioItem[] = [
         title: "Energy Dashboard UI",
         candidateId: "u3",
         imageUrl: "https://images.unsplash.com/photo-1551288049-bebda4e38f71?auto=format&fit=crop&q=80&w=800",
+        type: 'VIDEO',
+        videoUrl: "#",
         skills: ["Figma", "Dashboard Design"],
-        description: "Designed a clean, data-rich dashboard for monitoring solar panel efficiency.",
+        description: "Designed a clean, data-rich dashboard for monitoring solar panel efficiency. Watch the walkthrough of the user journey.",
         verifiedBy: "GreenPeak"
     },
     {
@@ -1068,24 +1073,49 @@ export const MOCK_PORTFOLIO_ITEMS: PortfolioItem[] = [
         title: "API Gateway Service",
         candidateId: "u2",
         imageUrl: "https://images.unsplash.com/photo-1558494949-ef526b005389?auto=format&fit=crop&q=80&w=800",
+        type: 'IMAGE',
         skills: ["Go", "Microservices", "gRPC"],
         description: "Built a high-performance API gateway handling 10k req/s.",
         verifiedBy: "Orbit Financial"
+    },
+    {
+        id: "p13",
+        title: "AI Product Demo",
+        candidateId: "u5",
+        imageUrl: "https://images.unsplash.com/photo-1677442136019-21780ecad995?auto=format&fit=crop&q=80&w=800",
+        type: 'VIDEO',
+        videoUrl: "#",
+        skills: ["AI", "Python", "React"],
+        description: "A full product walkthrough of an AI-powered task automator built during a 48h hackathon.",
+        verifiedBy: "Quantum Systems"
     },
     {
         id: "p4",
         title: "Marketing Campaign Assets",
         candidateId: "u8",
         imageUrl: "https://images.unsplash.com/photo-1542744173-8e7e53415bb0?auto=format&fit=crop&q=80&w=800",
+        type: 'IMAGE',
         skills: ["Adobe Illustrator", "Branding"],
         description: "Created social media assets and banners for Q4 campaign.",
         verifiedBy: "Nebula Create"
+    },
+    {
+        id: "p14",
+        title: "Mobile App Walkthrough",
+        candidateId: "u7",
+        imageUrl: "https://images.unsplash.com/photo-1512941937669-90a1b58e7e9c?auto=format&fit=crop&q=80&w=800",
+        type: 'VIDEO',
+        videoUrl: "#",
+        skills: ["Swift", "iOS", "Animation"],
+        description: "Watch how the smooth transitions and intuitive UX make this health app stand out.",
+        verifiedBy: "TechFlow"
     },
     {
         id: "p5",
         title: "Native iOS Health App",
         candidateId: "u7",
         imageUrl: "https://images.unsplash.com/photo-1512941937669-90a1b58e7e9c?auto=format&fit=crop&q=80&w=800",
+        type: 'IMAGE',
         skills: ["Swift", "HealthKit", "UI/UX"],
         description: "Developed a fitness tracking app using Apple HealthKit integration.",
         verifiedBy: "TechFlow"
@@ -1095,63 +1125,21 @@ export const MOCK_PORTFOLIO_ITEMS: PortfolioItem[] = [
         title: "Customer Support Chatbot",
         candidateId: "u4",
         imageUrl: "https://images.unsplash.com/photo-1531746790731-6c087fecd65a?auto=format&fit=crop&q=80&w=800",
+        type: 'IMAGE',
         skills: ["Python", "NLP", "TensorFlow"],
         description: "Trained a natural language processing model to automate support responses.",
         verifiedBy: "Quantum Systems"
     },
     {
-        id: "p7",
-        title: "Brand Identity System",
-        candidateId: "u9",
-        imageUrl: "https://images.unsplash.com/photo-1561070791-2526d30994b5?auto=format&fit=crop&q=80&w=800",
-        skills: ["Adobe Illustrator", "Brand Design", "Typography"],
-        description: "Complete visual identity including logo, colors, and brand guidelines.",
-        verifiedBy: "CreativeForce"
-    },
-    {
-        id: "p8",
-        title: "Performance Marketing Dashboard",
+        id: "p15",
+        title: "Sales Pitch & Demo",
         candidateId: "u10",
-        imageUrl: "https://images.unsplash.com/photo-1460925895917-afdab827c52f?auto=format&fit=crop&q=80&w=800",
-        skills: ["Google Analytics", "Data Studio", "SQL"],
-        description: "Real-time marketing metrics dashboard tracking ROI across channels.",
-        verifiedBy: "DataVault"
-    },
-    {
-        id: "p9",
-        title: "Microservices Architecture",
-        candidateId: "u11",
-        imageUrl: "https://images.unsplash.com/photo-1558494949-ef526b005389?auto=format&fit=crop&q=80&w=800",
-        skills: ["Go", "Kafka", "Kubernetes"],
-        description: "Designed event-driven microservices handling 1M+ events/day.",
+        imageUrl: "https://images.unsplash.com/photo-1557804506-669a67965ba0?auto=format&fit=crop&q=80&w=800",
+        type: 'VIDEO',
+        videoUrl: "#",
+        skills: ["Sales", "Presentation", "Product"],
+        description: "Demonstrating the value proposition and core features to a prospective enterprise client.",
         verifiedBy: "Orbit Financial"
-    },
-    {
-        id: "p10",
-        title: "User Research Study",
-        candidateId: "u12",
-        imageUrl: "https://images.unsplash.com/photo-1531403009284-440f080d1e12?auto=format&fit=crop&q=80&w=800",
-        skills: ["User Interviews", "Affinity Mapping", "Personas"],
-        description: "Comprehensive user research leading to 40% improvement in conversion.",
-        verifiedBy: "HealthBridge"
-    },
-    {
-        id: "p11",
-        title: "Motion Graphics Reel",
-        candidateId: "u9",
-        imageUrl: "https://images.unsplash.com/photo-1550745165-9bc0b252726f?auto=format&fit=crop&q=80&w=800",
-        skills: ["After Effects", "Motion Design", "Animation"],
-        description: "Collection of animated explainers and social media content.",
-        verifiedBy: "Nebula Create"
-    },
-    {
-        id: "p12",
-        title: "CI/CD Pipeline",
-        candidateId: "u5",
-        imageUrl: "https://images.unsplash.com/photo-1618401471353-b98afee0b2eb?auto=format&fit=crop&q=80&w=800",
-        skills: ["GitHub Actions", "Docker", "AWS"],
-        description: "Fully automated deployment pipeline with blue-green deployments.",
-        verifiedBy: "TechFlow"
     }
 ];
 
@@ -1208,3 +1196,69 @@ export const getCoursesBySector = (sectorId: string) => MOCK_COURSES.filter(c =>
 export const getExpertsBySector = (sectorId: string) => MOCK_EXPERTS.filter(e => e.sectorIds.includes(sectorId));
 export const getExpertById = (id: string) => MOCK_EXPERTS.find(e => e.id === id);
 export const getTasksBySector = (sectorId: string) => MOCK_TASKS.filter(t => t.sectorId === sectorId);
+
+// --- EXECUTION LEDGER INTERFACES ---
+export interface ExecutionLedgerItem {
+    id: string;
+    candidateId: string;
+    companyId: string;
+    title: string;
+    description: string;
+    impactMetrics: string[];
+    techStack: string[];
+    verifiedAt: string;
+    status: 'VERIFIED' | 'PENDING';
+    thumbnailUrl?: string; // For the "Image of the Internet" concept
+    earnings: number;
+}
+
+// --- MOCK EXECUTION LEDGER (The "Resume Replacement") ---
+export const MOCK_LEDGER_ITEMS: ExecutionLedgerItem[] = [
+    {
+        id: "l1",
+        candidateId: "u1", // Alex Rivera
+        companyId: "c1", // TechFlow
+        title: "Fix Conversion Drop on Checkout",
+        description: "Diagnosed and fixed a race condition in the payment step causing $4.2k/mo revenue loss. Implemented idempotent request handling.",
+        impactMetrics: ["Saved $4.2k/mo", "Lifted conversion by 12%", "Reduced cart abandonment by 18%"],
+        techStack: ["React", "Redux", "Stripe API"],
+        verifiedAt: "2023-10-15",
+        status: "VERIFIED",
+        thumbnailUrl: "/execution_ledger_mockup_1769307234957.png",
+        earnings: 1200
+    },
+    {
+        id: "l2",
+        candidateId: "u1",
+        companyId: "c3", // Orbit Financial
+        title: "Migrate Legacy Database",
+        description: "Led the migration of 5TB financial data to high-performance Postgres cluster with zero downtime.",
+        impactMetrics: ["Zero Downtime", "40% Faster Queries", "Reduced server costs by 25%"],
+        techStack: ["Python", "PostgreSQL", "AWS"],
+        verifiedAt: "2023-09-01",
+        status: "VERIFIED",
+        earnings: 3500
+    },
+    {
+        id: "l3", // Jordan Lee (Contractor Profile Image)
+        candidateId: "u_jordan_lee",
+        companyId: "c_retail_corp",
+        title: "Supply Chain Optimization",
+        description: "Optimized inventory levels for national retail chain using predictive modeling.",
+        impactMetrics: ["Reduced holding costs by 18%", "improved stock availability"],
+        techStack: ["Excel", "SQL", "Tableau"],
+        verifiedAt: "2023-08-15",
+        status: "VERIFIED",
+        thumbnailUrl: "/contractor_profile_view_1769307270534.png",
+        earnings: 4500
+    }
+];
+
+// --- MOCK ASSETS FOR UI DEPTH ---
+export const MOCK_UI_ASSETS = {
+    jobSimulationDashboard: "/job_simulation_dashboard_1769307250587.png",
+    taskCardHero: "/task_card_thumbnail_1769307289706.png",
+    contractorProfile: "/contractor_profile_view_1769307270534.png",
+    ledgerHero: "/execution_ledger_mockup_1769307234957.png"
+};
+

@@ -10,7 +10,7 @@ export default function LoginPage() {
     <div className="flex min-h-screen items-center justify-center px-4 py-12 bg-muted/20">
       <div className="w-full max-w-md space-y-8">
         <div className="text-center space-y-2">
-          <h1 className="text-3xl font-bold">Welcome back to SkillForge</h1>
+          <h1 className="text-3xl font-bold">Welcome back to Jumpstart</h1>
           <p className="text-muted-foreground">Choose a demo account to sign in</p>
         </div>
 

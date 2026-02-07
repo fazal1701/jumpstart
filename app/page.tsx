@@ -5,6 +5,7 @@ import { Navigation } from "@/components/navigation"
 import { Footer } from "@/components/footer"
 import { Button } from "@/components/ui/button"
 import { SectionProblem } from "@/components/section-problem"
+import { SectionComparison } from "@/components/section-comparison"
 import { SectionInnovation } from "@/components/section-innovation"
 import { SectionMVP } from "@/components/section-mvp"
 import { SectionShowcase } from "@/components/section-showcase"
@@ -87,6 +88,8 @@ export default function LandingPage() {
         >
           <SectionProblem />
         </motion.div>
+
+        <SectionComparison />
 
         <motion.div
           initial={{ opacity: 0, y: 40 }}
